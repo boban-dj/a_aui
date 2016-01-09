@@ -19,16 +19,13 @@
 # Run this script after your first boot with archlinux (as root)
 
 
-## todo
-## 206 ok dotfiles_boban; Add copy_config files 
-## 697 Nvidia load the correct drivers see TODO 
-
-
-## 480 openssh check configs
-## 3338 mariadb install, check configs
-## 3390 configure_php_apache() check configs, check to install all php-modules
-## 3372 configure_php() checkl configs
-## maybe copy whole function with dialog, add webservices: source post-install
+################################################################################
+## CHECKS
+# 480 openssh check configs
+# 3338 mariadb install, check configs
+# 3390 configure_php_apache() check configs, check to install all php-modules
+# 3372 configure_php() checkl configs
+# maybe copy whole function with dialog, add webservices: source post-install
 	#~ options=(SSH "Remote console"	off
 	#~ Web "Apache + PHP5 + MariaDB(Mysql) A complete Web Server"	on
 	#~ Owncloud "Self-hosted cloud"	off
@@ -41,27 +38,39 @@
 	#~ TightVNC "Remote screen server"	off
 	#~ Deluge "Torrent server with web UI"	off
 	#~ L2TP "VirtualPrivateNetwork Server L2TP, IPSEC"	off
-## Xorg configs, xinit, xerverrc, Xresources.d Xresources
-## WM: xfce4 dual session, i3, i3status, i3 with conky (see Arch-Installer-1)
-## CLI: urxvt + configs, xterm
-## xargs all programs
-## program specific configs: geany snippets,nanorc,Thunar custom
 
-## make cli menu my own programs
-
-## Automode:
-
-#~ add cmus in audio section
-
-## bugs:
-#~ transmission spell error
-#~ audio codecs?
+################################################################################
+## ADD FUNCTIONS
+# 697 Nvidia load the correct drivers see TODO 
+# Xorg configs, xinit, xerverrc, Xresources.d Xresources
+# copy root dotfiles/a_aui/.bashrc /root
+# WM: xfce4 dual session setup: copy .cache/session/xfce (change hostname)
+# WM xopy xfce panels for dual session
+# i3, i3status, i3 with conky (see Arch-Installer-1)
+# ok: CLI: urxvt + configs, xterm
+# xargs all programs
 
 
 
+################################################################################
+## PERSONAL CONFS-TWEAKS
+# keyboard speed from xfce4?
+# mc disable F keys
+# other shortcut keys
+# copy shortcuts in Thunar (xfce4)
+# add helmuthdu .bashrc: systemctl functions and others
+# program specific configs: geany snippets,nanorc,Thunar custom, 
+# make cli menu my own programs
+# add cmus in audio section
+# audio codecs?
 
 
-
+################################################################################
+# ERRORS
+# 3631 error?: echo " 1) Global Menu $AUR"
+# 1128 dmenu not working: dmenu2 j4-dmenu-desktop-git was not installed (installed manually packer -S j4-dmenu-desktop)
+# bashrc:ruby not found,rbenv , perlbrew not found
+# i3 statusbar: icons not ok, ip addr not showing
 
 
 if [[ -f `pwd`/sharedfuncs ]]; then
@@ -214,7 +223,8 @@ select_user(){
   create_new_user(){
     read -p "Username: " username
     username=`echo $username | tr '[:upper:]' '[:lower:]'`
-    useradd -m -g users -G wheel,video,audio,lp,optical,games,power,storage,http,lock,vboxusers,uucp,users -s /bin/bash ${username}
+    useradd -m -g users -G wheel -s /bin/bash ${username}
+    groupadd video,audio,lp,optical,games,power,storage,http,lock,vboxusers,uucp
     chfn ${username}
     passwd ${username}
     while [[ $? -ne 0 ]]; do
@@ -368,7 +378,7 @@ configure_sudo(){
     #This config is especially helpful for those using terminal multiplexers like screen, tmux, or ratpoison, and those using sudo from scripts/cronjobs:
     echo "" >> /etc/sudoers
     echo 'Defaults !requiretty, !tty_tickets, !umask' >> /etc/sudoers
-    echo 'Defaults visiblepw, path_info, insults, lecture=always' >> /etc/sudoers
+    echo 'Defaults visiblepw, path_info, insults, lecture=once' >> /etc/sudoers
     echo 'Defaults loglinelen=0, logfile =/var/log/sudo.log, log_year, log_host, syslog=auth' >> /etc/sudoers
     echo 'Defaults passwd_tries=3, passwd_timeout=1' >> /etc/sudoers
     echo 'Defaults env_reset, always_set_home, set_home, set_logname' >> /etc/sudoers
@@ -711,7 +721,7 @@ font_config(){
         if [[ $ARCHI == x86_64 ]]; then
           is_package_installed "lib32-fontconfig-infinality-ultimate" && pacman -Rdds --noconfirm lib32-cairo-infinality-ultimate lib32-fontconfig-infinality-ultimate lib32-freetype2-infinality-ultimate
         fi
-        pacman -S --asdeps --needed cairo fontconfig freetype2
+        pacman -S --asdeps --needed --noconfirm cairo fontconfig freetype2
         break
         ;;
       2)
@@ -1110,7 +1120,7 @@ install_desktop_environment(){
             ;;
           2)
             package_install "dmenu"
-            aur_package_install "dmenu2 j4-dmenu-desktop-git"           
+            aur_package_install "dmenu2 j4-dmenu-desktop"           
             ;;
           3)
             package_install "viewnior"

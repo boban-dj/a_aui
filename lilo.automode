@@ -35,7 +35,7 @@
   MAINMENU="1-13 15"
 #}}}
 #BASIC SETUP {{{
-  CUPS="y"
+  CUPS="n"
   CUSTOMREPO="n"         # Add custom repositories
   FIRMWARE="y"           # Install custom firmwares
   GITTOR="n"
@@ -115,7 +115,7 @@
     # 3) LightDM
     # 4) SSDM
     # 5) Slim
-    DISPLAY_MANAGER="3"
+    DISPLAY_MANAGER=""
   #}}}
   # 1) Icons Themes
   # 2) GTK2|GTK3 Themes
@@ -137,7 +137,7 @@
   # 2) Wicd
   # 3) ConnMan
   # n) None
-  NETWORKMANAGER=1
+  NETWORKMANAGER=2
   #USB 3G MODEM SUPPORT
   USBMODEM="n"
 #}}}
@@ -158,7 +158,7 @@
   #14) Unified Remote
   #15) Zim
   #16) Plank
-  ACCESSORIES_OPTIONS="4 6 8 10 13 15 16"
+  ACCESSORIES_OPTIONS="4 6 8 10"
 #}}}
 #DEVELOPEMENT {{{
   # 1) Atom
@@ -203,7 +203,7 @@
     #13) uglify-js
     #14) underscore
     #15) yeoman
-    NODEJS_OPTIONS="1 2 3 5 6 7 8 9 10 13 15"
+    NODEJS_OPTIONS="1-15"
   #}}}
 #}}}
 #OFFICE {{{
@@ -219,7 +219,7 @@
   #10) MediaElch
   #11) OCRFeeder
   #12) Xmind
-  OFFICE_OPTIONS="7 8 9"
+  OFFICE_OPTIONS="7 8"
 #}}}
 #SYSTEM TOOLS {{{
   # 1) ClamAV
@@ -233,7 +233,7 @@
   # 9) Webmin
   #10) Wine
   #11) Docker
-  SYSTEMTOOLS_OPTIONS="3 6 8 9"
+  SYSTEMTOOLS_OPTIONS="3 6 9"
 #}}}
 #GRAPHICS {{{
   # 1) Blender
@@ -247,7 +247,7 @@
   # 9) Shotwell
   #10) Simple Scan
   #11) XnViewMP
-  GRAPHICS_OPTIONS="2-11"
+  GRAPHICS_OPTIONS=""
 #}}}
 #INTERNET {{{
   # 1) Browser

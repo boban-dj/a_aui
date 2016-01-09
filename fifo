@@ -17,11 +17,7 @@
 #-------------------------------------------------------------------------------
 # Run this script after your first boot with archlinux (as root)
 
-
-## todo
-
-
-
+KEYMAP='us'
 
 
 if [[ -f `pwd`/sharedfuncs ]]; then
