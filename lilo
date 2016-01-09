@@ -42,13 +42,19 @@
 
 ################################################################################
 ## ADD FUNCTIONS
-# 697 Nvidia load the correct drivers see TODO 
-# Xorg configs, xinit, xerverrc, Xresources.d Xresources
 
-# copy root dotfiles/a_aui/.bashrc /root
+# install_video_cards(): Nvidia load the correct drivers see TODO 
+# create_new_user(): groupadd video,audio,lp,optical,games,power,storage,http,lock,vboxusers,uucp
+# configure_user_account(): copy root dotfiles/a_aui/.bashrc /root
+
+# cannot choose xfce4 and i3 to install. i3 also installs .xinitrc
 # WM: xfce4 dual session setup: copy .cache/session/xfce (change hostname)
 # WM xopy xfce panels for dual session
 # i3, i3status, i3 with conky (see Arch-Installer-1)
+
+# NOT INSTALLING? packer -S j4-dmenu-desktop-git
+# install_desktop_environment() install_icon_theme(): added faba-icon-theme-git dependancy not found when installing
+
 # ok: CLI: urxvt + configs, xterm
 # xargs all programs
 
@@ -65,7 +71,7 @@
 # make cli menu my own programs
 # add cmus in audio section
 # audio codecs?
-
+# add geany
 
 ################################################################################
 # ERRORS
@@ -73,6 +79,36 @@
 # 1128 dmenu not working: dmenu2 j4-dmenu-desktop-git was not installed (installed manually packer -S j4-dmenu-desktop)
 # bashrc:ruby not found,rbenv , perlbrew not found
 # i3 statusbar: icons not ok, ip addr not showing
+
+
+
+################################################################################
+## Xargs pacman
+
+# sudo xargs -a Packages pacman -S --noconfirm --needed
+# missing packages/not installing:
+	#~ error: target not found: #archassault-keyring
+	#~ error: target not found: #archassault-mirrorlist
+	#~ error: target not found: #arduino
+	#~ error: target not found: #php-mssql
+	#~ error: target not found: #php-pear
+	#~ error: target not found: #php-xcache
+	#~ error: target not found: #scalpel
+	
+#~ Error because virtualbox
+#~ error: failed to prepare transaction (conflicting dependencies)
+#~ :: lib32-nvidia-340xx-libgl and lib32-mesa-libgl are in conflict
+	
+#~ error: failed to prepare transaction (conflicting dependencies)
+#~ :: nvidia-340xx-libgl and mesa-libgl are in conflict
+	
+################################################################################	
+## Xargs packer
+# xargs -a Packages.aur packer -S --noconfirm
+
+
+
+
 
 
 if [[ -f `pwd`/sharedfuncs ]]; then
@@ -226,7 +262,6 @@ select_user(){
     read -p "Username: " username
     username=`echo $username | tr '[:upper:]' '[:lower:]'`
     useradd -m -g users -G wheel -s /bin/bash ${username}
-    groupadd video,audio,lp,optical,games,power,storage,http,lock,vboxusers,uucp
     chfn ${username}
     passwd ${username}
     while [[ $? -ne 0 ]]; do
@@ -261,15 +296,17 @@ select_user(){
           read -p "Enter your github repository [ex: aui]: " GITHUB_REPO
           git clone http://github.com/$GITHUB_USER/$GITHUB_REPO
           cp -R $GITHUB_REPO/.* /home/${username}/
-	# added extra functions for xinitrc and Xresources
+          cp -R $GITHUB_REPO/.xinitrc /home/${username}/
+          cp -R $GITHUB_REPO/Thunar /home/${username}/.config/
+          cp -R $GITHUB_REPO/xfce4 /home/${username}/.config/
+	#added extra functions for xinitrc and Xresources
 	#touch /home/${username}/.Xresources
 	#printf "#include \".Xresources.d/xterm\"\n#include \".Xresources.d/urxvt-unicode\"\n" >> /home/${username}/.Xresources
 	#chown -R ${username}:users /home/${username}/.Xresources
 	#mkdir /home/${username}/.Xresources.d
 	#chown -R ${username}:users /home/${username}/.Xresources.d
-	#touch /home/${username}/.Xresources.d/urxvt-unicode /home/${username}/.Xresources.d/xterm	
-          
-          #rm -fr $GITHUB_REPO
+	#touch /home/${username}/.Xresources.d/urxvt-unicode /home/${username}/.Xresources.d/xterm          
+        #rm -fr $GITHUB_REPO
           ;;
         *)
           invalid_option
@@ -959,7 +996,7 @@ install_desktop_environment(){
       for OPT in ${OPTIONS[@]}; do
         case "$OPT" in
           1)
-            aur_package_install "moka-icon-theme-git"
+            aur_package_install "moka-icon-theme-git faba-icon-theme-git"
             ;;
           2)
             aur_package_install "nitrux-icon-theme"
