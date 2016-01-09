@@ -24,7 +24,8 @@
 # 480 openssh check configs
 # 3338 mariadb install, check configs
 # 3390 configure_php_apache() check configs, check to install all php-modules
-# 3372 configure_php() checkl configs
+# 3372 configure_php() check configs
+
 # maybe copy whole function with dialog, add webservices: source post-install
 	#~ options=(SSH "Remote console"	off
 	#~ Web "Apache + PHP5 + MariaDB(Mysql) A complete Web Server"	on
@@ -43,6 +44,7 @@
 ## ADD FUNCTIONS
 # 697 Nvidia load the correct drivers see TODO 
 # Xorg configs, xinit, xerverrc, Xresources.d Xresources
+
 # copy root dotfiles/a_aui/.bashrc /root
 # WM: xfce4 dual session setup: copy .cache/session/xfce (change hostname)
 # WM xopy xfce panels for dual session
@@ -1350,7 +1352,8 @@ install_desktop_environment(){
       print_info "Xfce is a free software desktop environment for Unix and Unix-like platforms, such as Linux, Solaris, and BSD. It aims to be fast and lightweight, while still being visually appealing and easy to use."
       package_install "xfce4 xfce4-goodies xarchiver mupdf"
       # config xinitrc
-      config_xinitrc "startxfce4"
+      # commented: see configure_user_account()
+      #config_xinitrc "startxfce4"
       pause_function
       install_display_manager
       install_themes "XFCE"
