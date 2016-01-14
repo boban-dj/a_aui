@@ -115,7 +115,7 @@
     # 3) LightDM
     # 4) SSDM
     # 5) Slim
-    DISPLAY_MANAGER=""
+    DISPLAY_MANAGER="3"
   #}}}
   # 1) Icons Themes
   # 2) GTK2|GTK3 Themes
