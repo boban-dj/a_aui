@@ -1,0 +1,297 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open dropdown terminal here</name>
+	<unique-id>1434771732926825-2</unique-id>
+	<command>xfce4-terminal --tab --drop-down --working-directory %f</command>
+	<description>Open dropdown terminal at current path</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1451454254955097-3</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>guake</icon>
+	<name>Open Guake here</name>
+	<unique-id>1413049457651550-1</unique-id>
+	<command>guake -n NEW_TAB &amp;&amp; guake -e &quot;cd %f&quot; &amp;&amp; guake -t</command>
+	<description>Open Guake at terminal path</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>document-properties</icon>
+	<name>Copy Current Path</name>
+	<unique-id>1413049812841990-6</unique-id>
+	<command>echo -n %f | xclip -selection &quot;clipboard&quot;</command>
+	<description>Description: Copies $PATH to clipboard. </description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>x-office-document</icon>
+	<name>Slugify Filename</name>
+	<unique-id>1413476120117465-1</unique-id>
+	<command>for file in %N; do mv &quot;$file&quot; &quot;$(echo &quot;$file&quot; | tr -s &apos; &apos; | tr &apos; A-Z&apos; &apos;-a-z&apos; | tr -s &apos;-&apos; | tr -c &apos;[:alnum:][:cntrl:].&apos; &apos;_&apos;)&quot;; done</command>
+	<description>Rename the currently selected files, making the filenames lower-case &amp; replacing spaces with underscore</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder</icon>
+	<name>List filename paths</name>
+	<unique-id>1414587959298579-1</unique-id>
+	<command>ls -d -1 $PWD/** | zenity --width=800 --height=540 --text-info --title %n</command>
+	<description>List all filenam paths in terminal</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>list-remove</icon>
+	<name>Delete All Empty Folders</name>
+	<unique-id>1413049611882284-3</unique-id>
+	<command>find . -type d -empty -delete</command>
+	<description>Deletes all empty folders in current directory. </description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>dialog-warning</icon>
+	<name>Edit as root</name>
+	<unique-id>1413800689815123-3</unique-id>
+	<command>gksu geany %f</command>
+	<description>Edit file as root in Geany</description>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>dialog-warning</icon>
+	<name>Open Thunar as root</name>
+	<unique-id>1414496185535526-1</unique-id>
+	<command>gksu thunar %f</command>
+	<description>Open Thunar as root</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Mogrify jpg to png in new directory</name>
+	<unique-id>1413480600995811-6</unique-id>
+	<command>D=&quot;$(zenity --title=&quot;Directory Name&quot; --entry --text=&quot;Please enter the directory name&quot;)&quot;; if [ ! -d $D ]; then mkdir $D; fi &amp;&amp; mogrify -path $D -format png %F</command>
+	<description>Mogrify jpg to png in new directory of choice</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Convert image</name>
+	<unique-id>1413480717056889-8</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/image_convert_dialog %N</command>
+	<description>Convert the selected files to the user defined graphic format</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Resize images x500 in dir images</name>
+	<unique-id>1413480742785610-9</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/image_resize 500 %N</command>
+	<description>resize pictures in ./images x500 set size in Thunar command</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Resize images dialog</name>
+	<unique-id>1413271237035082-22</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/image_resize_dialog %N</command>
+	<description>Resize the selected graphic files</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Resize images exact</name>
+	<unique-id>1413480615228687-7</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/image_resize_exact %N</command>
+	<description>Resize to exact pixel size no aspect ratio enter like: 150x150</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Image link markdown</name>
+	<unique-id>1413540089526098-1</unique-id>
+	<command>/usr/bin/image_link | zenity --width=800 --height=540 --text-info --title %n</command>
+	<description>Make image reference links for markdown in dir images</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>View 3 step</name>
+	<unique-id>1413481345425658-16</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/view_three_step %N</command>
+	<description>Make a view of 3 images and add labels to them, collect in montage view</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>View 4 step</name>
+	<unique-id>1449840580891224-1</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/view_four_step %N</command>
+	<description>Make a view of 4 images and add labels to them, collect in montage view</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>View 6 step</name>
+	<unique-id>1413481249757869-14</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/view_six_step %N</command>
+	<description>Make a view of 6 images and add labels to them, collect in montage view</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Rotate exiftran</name>
+	<unique-id>1413543109121458-3</unique-id>
+	<command>exiftran -ai *.jpg *.png %N</command>
+	<description>Rotate all selected images according to exif info</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>media-playback-start</icon>
+	<name>Play 15 Seconds</name>
+	<unique-id>1413049727398918-5</unique-id>
+	<command>mplayer %f -really-quiet -endpos 15</command>
+	<description>Description: Play a 15 seconds clip of a media file. Appears if selection contains: audio files, video files</description>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>imagemagick</icon>
+	<name>Three views images dialog old</name>
+	<unique-id>1413481081400152-11</unique-id>
+	<command>/home/boban/.config/Thunar/custom_actions/three_views_dialog %N</command>
+	<description>Three views images with annotations</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<other-files/>
+</action>
+<action>
+	<icon>drive-removable-media</icon>
+	<name>Open iso in folder</name>
+	<unique-id>1442590538709851-1</unique-id>
+	<command>~/Scripts/open_iso.sh %f</command>
+	<description>Open iso file in current folder</description>
+	<patterns>*.iso;*.ISO;*.bin;*.BIN;*.img;*.IMG;*.nrg;*.NRG;*.mdf;*.MDF</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Print document</name>
+	<unique-id>1440575952465826-1</unique-id>
+	<command>lp %f</command>
+	<description>print document</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>usermount</icon>
+	<name>Mount iso</name>
+	<unique-id>1442591445882405-7</unique-id>
+	<command>~/Scripts/thunar_iso_mount.sh %f</command>
+	<description>Mount iso on Desktop</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<other-files/>
+</action>
+<action>
+	<icon>usermount</icon>
+	<name>Umount iso</name>
+	<unique-id>1442591430569783-6</unique-id>
+	<command>~/Scripts/thunar_iso_umount.sh %f</command>
+	<description>Umount iso from Desktop</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<other-files/>
+</action>
+<action>
+	<icon>application-pdf</icon>
+	<name>Multiple img to pdf a4</name>
+	<unique-id>1449566770566663-4</unique-id>
+	<command>~/Scripts/img2pdfa4.sh %F</command>
+	<description>Multiple images to pdf a4</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Opn in Mousepad</name>
+	<unique-id>1449572920792661-6</unique-id>
+	<command>mousepad %f</command>
+	<description>Open document in Mousepad</description>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+</actions>
