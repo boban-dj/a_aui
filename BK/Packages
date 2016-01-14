@@ -1,13 +1,9 @@
 abiword
 alsa-plugins
 alsa-utils
-android-udev
 apache
 arch-install-scripts
 arch-wiki-lite
-archassault-keyring
-archassault-mirrorlist
-arduino
 asciiquarium
 atool
 audacity
@@ -42,7 +38,6 @@ device-mapper
 dhcpcd
 diffutils
 dmidecode
-docker
 dosfstools
 dzen2
 e2fsprogs
@@ -122,11 +117,6 @@ iputils
 jfsutils
 kismet
 less
-lib32-alsa-plugins
-lib32-libpulse
-lib32-mpg123
-lib32-nvidia-340xx-libgl
-lib32-qt4
 libdvdcss
 libev
 libisoburn
@@ -171,9 +161,6 @@ ntfs-3g
 ntp
 numix-themes
 numlockx
-nvidia-340xx
-nvidia-340xx-libgl
-nvidia-340xx-lts
 openshot
 openssh
 orage
@@ -200,13 +187,10 @@ php-gd
 php-intl
 php-ldap
 php-mcrypt
-php-mssql
 php-odbc
-php-pear
 php-pgsql
 php-snmp
 php-tidy
-php-xcache
 php-xsl
 phpmyadmin
 pkg-config
@@ -246,7 +230,6 @@ ristretto
 rsync
 ruby
 s-nail
-scalpel
 screen
 screenfetch
 scribus
