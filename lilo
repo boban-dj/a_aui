@@ -47,7 +47,7 @@
 # create_new_user(): groupadd video,audio,lp,optical,games,power,storage,http,lock,vboxusers,uucp
 # configure_user_account(): copy root dotfiles/a_aui/.bashrc /root
 
-# cannot choose xfce4 and i3 to install. i3 also installs .xinitrc
+# cannot choose xfce4 AND i3 to install. i3 also installs .xinitrc
 # WM: xfce4 dual session setup: copy .cache/session/xfce (change hostname)
 # WM xopy xfce panels for dual session
 # i3, i3status, i3 with conky (see Arch-Installer-1)
@@ -1158,8 +1158,8 @@ install_desktop_environment(){
             OPT=1
             ;;
           2)
-            package_install "dmenu"
-            aur_package_install "dmenu2 j4-dmenu-desktop"           
+            #package_install "dmenu"
+            aur_package_install "dmenu2 j4-dmenu-desktop-git"           
             ;;
           3)
             package_install "viewnior"

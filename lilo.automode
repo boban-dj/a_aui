@@ -35,7 +35,7 @@
   MAINMENU="1-13 15"
 #}}}
 #BASIC SETUP {{{
-  CUPS="n"
+  CUPS="y"
   CUSTOMREPO="n"         # Add custom repositories
   FIRMWARE="y"           # Install custom firmwares
   GITTOR="n"
@@ -52,7 +52,7 @@
     # 1) Default
     # 2) Infinality
     # 3) Ubuntu
-    FONTCONFIG=2
+    FONTCONFIG=1
   #}}}
   #ADDITIONAL FIRMWARE {{{
     # 1) aic94xx-firmware
@@ -107,7 +107,7 @@
     #11) Xcompmgr
     #12) Zathura
     #13) speedtest-cli
-    MISCAPPS="1 2 5 7"
+    MISCAPPS="1 2 5 7 10"
   #}}}
   #DISPLAY MANAGER {{{
     # 1) Elsa
@@ -124,7 +124,7 @@
     # 1) Moka
     # 2) Nitrux
     # 3) Numix
-    ICONS_THEMES="1-3"
+    ICONS_THEMES="3"
   #}}}
   #GTK THEMES {{{
     # 1) Numix
@@ -158,7 +158,7 @@
   #14) Unified Remote
   #15) Zim
   #16) Plank
-  ACCESSORIES_OPTIONS="4 6 8 10"
+  ACCESSORIES_OPTIONS="6 8 10 15"
 #}}}
 #DEVELOPEMENT {{{
   # 1) Atom
@@ -185,7 +185,7 @@
     # 8) Vim-like editing plugin for Eclipse
     # 9) Git support plugin for Eclipse
     #10) Colortheme for Eclipse
-    ECLIPSE_OPTIONS="1"
+    ECLIPSE_OPTIONS=""
   #}}}
   #NODEJS {{{
     # 1) backbone
@@ -203,7 +203,7 @@
     #13) uglify-js
     #14) underscore
     #15) yeoman
-    NODEJS_OPTIONS="1-15"
+    NODEJS_OPTIONS="3"
   #}}}
 #}}}
 #OFFICE {{{
@@ -219,7 +219,7 @@
   #10) MediaElch
   #11) OCRFeeder
   #12) Xmind
-  OFFICE_OPTIONS="7 8"
+  OFFICE_OPTIONS="7 8 9"
 #}}}
 #SYSTEM TOOLS {{{
   # 1) ClamAV
@@ -247,7 +247,7 @@
   # 9) Shotwell
   #10) Simple Scan
   #11) XnViewMP
-  GRAPHICS_OPTIONS=""
+  GRAPHICS_OPTIONS="10"
 #}}}
 #INTERNET {{{
   # 1) Browser
@@ -256,7 +256,7 @@
   # 4) Instant Messaging|IRC
   # 5) Mapping Tools
   # 6) VNC|Desktop Share
-  INTERNET_OPTIONS="1-6"
+  INTERNET_OPTIONS="1-5"
   #BROWSER {{{
     # 1) Chrome
     # 2) Chromium
@@ -283,7 +283,7 @@
   #EMAIL|RSS {{{
     # 1) Liferea
     # 2) Thunderbird
-    EMAIL_OPTIONS="1 2"
+    EMAIL_OPTIONS="2"
   #}}}
   #IM|IRC {{{
     # 1) HexChat|Konversation
@@ -294,12 +294,12 @@
     # 6) Viber
     # 7) Telegram Desktop
     # 8) qTox
-    IM_OPTIONS="4"
+    IM_OPTIONS="4 7"
   #}}}
   #MAPPING {{{
     # 1) Google Earth
     # 2) NASA World Wind
-    MAPPING_OPTIONS=""
+    MAPPING_OPTIONS="1"
   #}}}
   #VNC|Desktop Share {{{
     # 1) Remmina
@@ -311,7 +311,7 @@
   # 1) Players
   # 2) Editors|Tools
   # 3) Codecs
-  AUDIO_OPTIONS=""
+  AUDIO_OPTIONS="1-2"
   #PLAYERS {{{
     # 1) Amarok
     # 2) Audacious
@@ -328,7 +328,7 @@
     #13) Timidity++
     #14) Tomahawk
     #15) quodlibet
-    AUDIO_PLAYER_OPTIONS=""
+    AUDIO_PLAYER_OPTIONS="2 5"
   #}}}
   #EDITORS|TOOLS {{{
     # 1) Audacity
@@ -336,14 +336,14 @@
     # 3) Google Music Manager
     # 4) OcenAudio
     # 5) Soundconverter|Soundkonverter
-    AUDIO_EDITOR_OPTIONS=""
+    AUDIO_EDITOR_OPTIONS="1"
   #}}}
 #}}}
 #VIDEO {{{
   # 1) Players
   # 2) Editors|Tools
   # 3) Codecs
-  VIDEO_OPTIONS="1"
+  VIDEO_OPTIONS="1-2"
   #PLAYERS {{{
     # 1) Audience
     # 2) Gnome Mplayer
@@ -369,7 +369,7 @@
     # 8) Openshot
     # 9) Pitivi
     #10) Transmageddon
-    VIDEO_EDITOR_OPTIONS=""
+    VIDEO_EDITOR_OPTIONS="1-10"
   #}}}
 #}}}
 #GAMES {{{
