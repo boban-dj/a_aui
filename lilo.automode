@@ -84,7 +84,7 @@
   #11) i3
   #12) OpenBox
   #13) Xmonad
-  DESKTOPENV=8 11
+  DESKTOPENV="8 11"
   #KDE {{{
     # 1) Choqok
     # 2) Digikam
@@ -137,7 +137,7 @@
   # 2) Wicd
   # 3) ConnMan
   # n) None
-  NETWORKMANAGER=2
+  NETWORKMANAGER="2"
   #USB 3G MODEM SUPPORT
   USBMODEM="n"
 #}}}
@@ -523,7 +523,7 @@
   # 5) ttf-ms-fonts
   # 6) ttf-vista-fonts
   # 7) wqy-microhei
-  FONTS_OPTIONS="1-7"
+  FONTS_OPTIONS="1 3-7"
 #}}}
 #EXTRA {{{
   # 1) Global Menu
