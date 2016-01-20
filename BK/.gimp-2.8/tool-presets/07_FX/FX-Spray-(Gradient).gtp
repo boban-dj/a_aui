@@ -1,0 +1,29 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-colorize")
+(name "0 - FX Spray (Gradient/Addition)")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (foreground (color-rgb 0.098331 0.102193 0.180392))
+    (paint-mode addition-mode)
+    (brush "Medium Round 2")
+    (dynamics "Spray FX")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 40.000000)
+    (application-mode incremental)
+    (use-jitter yes)
+    (jitter-amount 10.000000)
+    (dynamics-expanded yes)
+    (fade-length 37.000000)
+    (fade-unit percent)
+    (brush-view-size 35))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient yes)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

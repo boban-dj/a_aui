@@ -1,0 +1,24 @@
+# GIMP tool preset file
+
+(stock-id "gimp-convert-rgb")
+(name "1 - Colorize")
+(tool-options "GimpInkOptions"
+    (tool "gimp-ink-tool")
+    (foreground (color-rgb 0.858824 0.111142 0.111142))
+    (background (color-rgb 0.000000 0.000000 0.000000))
+    (paint-mode color-mode)
+    (brush-size 7.000000)
+    (size 15.000000)
+    (size-sensitivity 0.800000)
+    (vel-sensitivity 0.000000)
+    (tilt-sensitivity 0.000000)
+    (blob-angle 1.107149))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

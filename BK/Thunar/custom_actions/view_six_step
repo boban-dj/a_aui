@@ -1,0 +1,158 @@
+#!/usr/bin/bash
+
+# This is the first tutorial \n with a newline
+# This is the second tutorial \n with a newline
+# This is the third tutorial \n with a newline, goodbye
+# This is the 4th tutorial \n with a newline, goodbye
+# This is the fifth tutorial \n with a newline, goodbye
+# This is the 6th tutorial \n with a newline, goodbye
+
+## 1 IMAGE ##
+
+# Select file for 1 image
+#
+FILE=`zenity --file-selection --title="Select a File"`
+cp $FILE ./1.jpg
+
+# Add a border to the images
+#
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+#
+convert -resize 512x512 extent 512x512 -border 2x2 1.jpg x-1.jpg
+#convert -resize 512x512\! -border 2x2 1.jpg x-1.jpg
+#convert -resize 512x512^ -gravity center -extent 512x512 1.jpg x-1.jpg
+
+# Enter annotation for image 1
+#
+EXT=`zenity --title="Image Description" --entry --text="Enter the image description"`
+
+width=`identify -format %w x-1.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"$EXT" x-1.jpg +swap -gravity south -composite  x-1.jpg
+
+
+## 2 IMAGE ##
+
+
+# Select file for 2 image
+#
+FILE=`zenity --file-selection --title="Select a File"`
+cp $FILE ./2.jpg
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+#
+convert -resize 512x512 extent 512x512 -border 2x2 2.jpg x-2.jpg
+#convert -resize 512x512\! -border 2x2 2.jpg x-2.jpg
+#convert -resize 512x512^ -gravity center -extent 512x512 2.jpg x-2.jpg
+
+# Enter annotation for image 2
+#
+EXT=`zenity --title="Image Description" --entry --text="Enter the image description"`
+
+width=`identify -format %w x-2.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"$EXT" x-2.jpg +swap -gravity south -composite  x-2.jpg
+
+
+
+
+## 3 IMAGE ##
+
+# Select file for 3 image
+#
+FILE=`zenity --file-selection --title="Select a File"`
+cp $FILE ./3.jpg
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+#
+convert -resize 512x512 extent 512x512 -border 2x2 3.jpg x-3.jpg
+#convert -resize 512x512\! -border 2x2 3.jpg x-3.jpg
+#convert -resize 512x512^ -gravity center -extent 512x512 3.jpg x-3.jpg
+
+# Enter annotation for image 3
+#
+EXT=`zenity --title="Image Description" --entry --text="Enter the image description"`
+
+width=`identify -format %w x-3.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"$EXT" x-3.jpg +swap -gravity south -composite  x-3.jpg
+
+
+
+
+
+## 4 IMAGE ##
+
+# Select file for 4 image
+#
+FILE=`zenity --file-selection --title="Select a File"`
+cp $FILE ./4.jpg
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+#
+convert -resize 512x512 extent 512x512 -border 2x2 4.jpg x-4.jpg
+#convert -resize 512x512\! -border 2x2 4.jpg x-4.jpg
+#convert -resize 512x512^ -gravity center -extent 512x512 4.jpg x-4.jpg
+
+# Enter annotation for image 4
+#
+EXT=`zenity --title="Image Description" --entry --text="Enter the image description"`
+
+width=`identify -format %w x-4.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"$EXT" x-4.jpg +swap -gravity south -composite  x-4.jpg
+
+
+
+## 5 IMAGE ##
+
+# Select file for 5 image
+#
+FILE=`zenity --file-selection --title="Select a File"`
+cp $FILE ./5.jpg
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+#
+convert -resize 512x512 extent 512x512 -border 2x2 5.jpg x-5.jpg
+#convert -resize 512x512\! -border 2x2 5.jpg x-5.jpg
+#convert -resize 512x512^ -gravity center -extent 512x512 5.jpg x-5.jpg
+
+# Enter annotation for image 5
+#
+EXT=`zenity --title="Image Description" --entry --text="Enter the image description"`
+
+width=`identify -format %w x-5.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"$EXT" x-5.jpg +swap -gravity south -composite  x-5.jpg
+
+
+## 6 IMAGE ##
+
+# Select file for 6 image
+#
+FILE=`zenity --file-selection --title="Select a File"`
+cp $FILE ./6.jpg
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+#
+convert -resize 512x512 extent 512x512 -border 2x2 6.jpg x-6.jpg
+#convert -resize 512x512\! -border 2x2 6.jpg x-6.jpg
+#convert -resize 512x512^ -gravity center -extent 512x512 6.jpg x-6.jpg
+
+# Enter annotation for image 6
+#
+EXT=`zenity --title="Image Description" --entry --text="Enter the image description"`
+
+width=`identify -format %w x-6.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"$EXT" x-6.jpg +swap -gravity south -composite  x-6.jpg
+
+
+
+
+
+
+#
+# Then combine them
+#
+#montage -tile 1x2 -mode Concatenate x-top.jpg   x-side.jpg  x-right.jpg
+#montage -tile 2x1 -mode Concatenate x-front.jpg x-right.jpg final.jpg
+
+
+# Clean intermediate files
+#
+rm -f 1.jpg 2.jpg 3.jpg 4.jpg 5.jpg 6.jpg
+
+montage '*.jpg' -tile 2x3 -geometry 512x512 proofsheet512.jpg
+
+#montage '*.jpg' -geometry 512x512x+15+5 proofsheet512_frame.jpg
+

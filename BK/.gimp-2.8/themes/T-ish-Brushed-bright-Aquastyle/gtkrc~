@@ -1,0 +1,497 @@
+# T-ish for the Clearlooks Engine
+include "iconrc"
+
+style "clearlooks-default"
+{
+  GtkButton      ::default_border    = { 0, 0, 0, 0 }
+  GtkRange       ::trough_border     = 0
+  GtkPaned       ::handle_size       = 6
+  GtkRange       ::slider_width      = 15
+  GtkRange       ::stepper_size      = 15
+  GtkScrollbar   ::min_slider_length = 30
+  GtkCheckButton ::indicator_size    = 12
+  GtkMenuBar     ::internal-padding  = 0
+  GtkTreeView    ::expander_size     = 14
+  GtkExpander    ::expander_size     = 16
+
+  xthickness = 1
+  ythickness = 1
+
+  GtkTreeView::odd_row_color = "#e5e5e5"
+  GtkScrollbar::has_secondary_backward_stepper 	= 1
+  GtkScrollbar::has_secondary_forward_stepper 	= 0
+
+  	fg[NORMAL]        		= "#161616"
+  	fg[PRELIGHT]     	 	= "#000000"
+  	fg[ACTIVE]        		= "#161616"
+  	fg[SELECTED]      	= "#000000"
+  	fg[INSENSITIVE]   	= "#777777"
+
+	bg[NORMAL] 		= "#cccccc"
+	bg[PRELIGHT] 		= "#F1F1F1"
+	bg[SELECTED] 		= "#2f74bf"
+	bg[ACTIVE] 			= "#CCCCCC"
+	bg[INSENSITIVE] 	= "#e5e5e5"
+		
+	base[NORMAL] 		= "#ffffff"
+	base[SELECTED] 	= "#2f74bf"
+	base[ACTIVE] 		= "#cccccc"
+	base[PRELIGHT]		= "#2f74bf"
+	base[INSENSITIVE]	= "#e5e5e5"
+
+  	text[NORMAL]      	= "#161616"
+  	text[PRELIGHT]     	= "#000000"
+  	text[ACTIVE]      		= "#161616"
+  	text[SELECTED]    	= "#FFFFFF"
+  	text[INSENSITIVE] 	= "#777777"
+  	bg_pixmap[NORMAL]      = "bc.png"
+  	bg_pixmap[PRELIGHT]    = "bc-light.png"
+  	bg_pixmap[ACTIVE]      = "bc-dark.png"
+
+
+engine "clearlooks"
+{
+#menubarstyle = 0 	# 0 = flat, 1 = sunken, 2 = flat gradient
+sunkenmenubar = 0 	# 0 = disable, 1 = enable
+menuitemstyle = 1	# 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
+listviewitemstyle = 1 	# 0 = flat, 1 = 3d-ish (gradient)
+progressbarstyle = 0 	# 0 = candy bar, 1 = flat
+}
+}
+
+style "clearlooks-wide" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL]			= "#e5e5e5"
+  bg[PRELIGHT]			= "#F1F1F1"
+}
+
+style "clearlooks-button" = "clearlooks-wide"
+{
+  bg[NORMAL]			= "#e5e5e5"
+  bg[PRELIGHT]			= "#F1F1F1"
+}
+
+style "clearlooks-notebook" = "clearlooks-wide"
+{
+  bg[NORMAL] = "#e5e5e5"
+}
+
+style "clearlooks-tasklist" = "clearlooks-default"
+{
+  xthickness = 5
+  ythickness = 3
+}
+
+style "clearlooks-menu" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 1
+  bg[NORMAL] = "#e5e5e5"
+}
+
+style "clearlooks-menu-item" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 3
+  fg[PRELIGHT]  		= "#FFFFFF"
+  text[PRELIGHT] 		= "#000000"
+ # base[SELECTED] 	= "#2f74bf"
+ # bg[NORMAL] 	= "#2f74bf"
+}
+
+style "clearlooks-menu-itembar" = "clearlooks-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "clearlooks-tree" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "clearlooks-frame-title" = "clearlooks-default"
+{
+  fg[NORMAL] = "#1b1b1b"
+}
+
+style "clearlooks-panel" = "clearlooks-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "clearlooks-tooltips" = "clearlooks-default"
+{
+  xthickness = 4
+  ythickness = 4
+  bg[NORMAL] = { 1.0,1.0,0.75 }
+}
+
+style "clearlooks-progressbar" = "clearlooks-default"
+{
+  xthickness = 1
+  ythickness = 1
+  #bg[NORMAL]		= "#e5e5e5"
+  base[SELECTED]	= "#2f74bf"
+}
+
+style "clearlooks-combo" = "clearlooks-default"
+{
+  xthickness = 1
+  ythickness = 2
+  fg[ACTIVE]     			= "#fdfdfd"
+  bg[NORMAL]			= "#e5e5e5"
+  bg[PRELIGHT]			= "#F1F1F1"
+}
+
+###############################################
+# GtkScrollbar: The scrollbars on windows
+###############################################
+
+style "clearlooks-scrollbar" = "clearlooks-default"
+
+{
+	
+	
+
+    GtkRange::trough_border = 0
+    GtkRange::slider_width = 15
+
+
+    GtkRange::stepper_size = 15
+
+    GtkScrollbar::min_slider_length = 30
+  
+    engine "pixmap" 
+    {
+ 	
+        #The trough for vertical scrollbars. This is the region in which the slider moves.
+	image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            detail          = "trough"
+            file            = "vertical_trough.png"
+            border          = { 0, 0, 30, 30 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+	#The trough for horizontal scrollbars.
+        image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            detail          = "trough"
+            file            = "horizontal_trough.png"
+            border          = { 30, 30, 0, 0 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+	#The image used to draw the slider for horizontal scrollbars
+	#in the NORMAL state.
+        image 
+	{
+            function        = SLIDER
+            recolorable     = TRUE
+            state           = NORMAL
+            file            = "scrollbar_horizontal.png"
+            border          = { 15, 15, 6, 6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+	#The image used to draw the slider for horizontal scrollbars
+	#in their prelight state.
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            state           = PRELIGHT
+            file            = "scrollbar_prelight_horizontal.png"
+            border          = { 15, 15, 6, 6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+	#The image used to draw the slider for horizontal scrollbars
+	#in their ACTIVE (pressed?) state.
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            state           = ACTIVE
+            file            = "scrollbar_horizontal.png"
+            border          = { 15, 15, 6, 6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+	#The image used to draw the slider for horizontal scrollbars
+	#in their INSENSITIVE state.
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            file            = "scrollbar_horizontal.png"
+            border          = { 15, 15, 6, 6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+	#The image used to draw the slider for vertical scrollbars
+	#in their NORMAL state.
+        image 
+	{
+            function        = SLIDER
+            recolorable     = TRUE
+            state           = NORMAL
+            file            = "scrollbar_vertical.png"
+            border          = { 6, 6, 15, 15 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+	#The image used to draw the slider for vertical scrollbars
+	#in their prelight state.
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            state           = PRELIGHT
+            file            = "scrollbar_prelight_vertical.png"
+            border          = { 6, 6, 15, 15 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+	#The image used to draw the slider for vertical scrollbars
+	#in their ACTIVE state.
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            state           = ACTIVE
+            file            = "scrollbar_vertical.png"
+            border          = { 6, 6, 15, 15 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+	#The image used to draw the slider for vertical scrollbars
+	#in their INSENSITIVE state.
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            file            = "scrollbar_vertical.png"
+            border          = { 6, 6, 15, 15 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+        image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            state           = NORMAL 
+            file            = "vscroll_down.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+        }
+        
+	image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            state           = PRELIGHT
+            file            = "vscroll_down.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+        image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            state           = ACTIVE
+            file            = "vscroll_down.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+        }
+
+     image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= NORMAL
+	overlay_file	= "vscroll_up.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= NORMAL
+	overlay_file	= "vscroll_down.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= NORMAL
+	overlay_file	= "hscroll_left.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= NORMAL
+	overlay_file	= "hscroll_right.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= RIGHT
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= PRELIGHT
+	overlay_file	= "vscroll_up.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= PRELIGHT
+	overlay_file	= "vscroll_down.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= PRELIGHT
+	overlay_file	= "hscroll_left.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	state		= PRELIGHT
+	overlay_file	= "hscroll_right.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= RIGHT
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	shadow		= IN
+	overlay_file	= "vscroll_up.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	shadow		= IN
+	overlay_file	= "vscroll_down.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	shadow		= IN
+	overlay_file	= "hscroll_left.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= ARROW
+	recolorable	= TRUE
+	shadow		= IN
+	overlay_file	= "hscroll_right.png"
+	overlay_border	= { 0, 0, 0, 0 }
+	overlay_stretch	= FALSE
+	arrow_direction	= RIGHT
+      }    
+
+}
+}
+
+
+style "clearlooks-spin" = "clearlooks-wide"
+{
+  fg[ACTIVE]     			= "#fdfdfd"
+  bg[NORMAL]			= "#e5e5e5"
+  bg[PRELIGHT]			= "#F1F1F1"
+}
+
+style "clearlooks-check" = "clearlooks-button"
+{
+  text[NORMAL] = "#313131"
+  text[PRELIGHT] = "#000000"
+}
+
+class "GtkCheckButton" style "clearlooks-check"
+class "GtkRadioButton" style "clearlooks-check"
+class "GtkWidget" style "clearlooks-default"
+class "GtkRange" style "clearlooks-wide"
+class "GtkFrame" style "clearlooks-wide"
+class "GtkSpinButton" style "clearlooks-spin"
+class "GtkStatusbar" style "clearlooks-wide"
+class "GtkMenu" style "clearlooks-menu"
+class "GtkMenuItem" style "clearlooks-menu-item"
+widget_class "*MenuItem.*" style "clearlooks-menu-item"
+class "GtkEntry" style "clearlooks-wide"
+widget_class "*.tooltips.*.GtkToggleButton" style "clearlooks-tasklist"
+widget_class "*.GtkTreeView.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkCTree.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkList.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkCList.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkFrame.GtkLabel" style "clearlooks-frame-title"
+widget_class "BasePWidget.GtkEventBox.GtkTable.GtkFrame" style "clearlooks-panel"
+widget "gtk-tooltips" style "clearlooks-tooltips"
+class "GtkNotebook" style "clearlooks-notebook"
+class "GtkProgressBar" style "clearlooks-progressbar"
+widget_class "*.GtkComboBox.GtkButton" style "clearlooks-combo"
+widget_class "*.GtkCombo.GtkButton" style "clearlooks-combo"
+class "GtkButton" style "clearlooks-button"
+class "GtkScrollbar" style "clearlooks-scrollbar"
+
+include "icons/iconrc"
+
+gtk-icon-sizes = "gtk-large-toolbar=28,28:panel-menu=28,28:gtk-menu=19,19"

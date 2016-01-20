@@ -1,0 +1,22 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-pencil")
+(name "Sketch")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (brush "Pencil01")
+    (dynamics "Pencil")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (jitter-amount 0.350000)
+    (dynamics-expanded yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics yes)
+(use-gradient yes)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-ink")
+(name "Ink")
+(tool-options "GimpInkOptions"
+    (tool "gimp-ink-tool")
+    (brush-size 15.000000)
+    (dynamics-expanded yes)
+    (gradient-reverse yes)
+    (use-smoothing yes)
+    (smoothing-quality 50)
+    (smoothing-factor 180.600000)
+    (size 40.000000)
+    (tilt-angle 2.700000)
+    (vel-sensitivity 0.900000)
+    (tilt-sensitivity 0.000000)
+    (blob-aspect 2.466251)
+    (blob-angle 1.107149))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

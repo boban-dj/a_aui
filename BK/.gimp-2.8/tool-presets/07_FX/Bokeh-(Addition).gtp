@@ -1,0 +1,31 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-colorize")
+(name "0 - FX Bokeh (Addition)")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (foreground (color-rgb 0.172549 0.158188 0.061576))
+    (opacity 0.850000)
+    (paint-mode addition-mode)
+    (brush "Round 100%")
+    (dynamics "Random Opacity/Size")
+    (gradient "Rocket Fire")
+    (palette "Default")
+    (brush-size 45.000000)
+    (application-mode incremental)
+    (use-jitter yes)
+    (jitter-amount 6.500000)
+    (dynamics-expanded yes)
+    (fade-length 23.000000)
+    (fade-unit percent)
+    (smoothing-quality 100)
+    (smoothing-factor 757.000000))
+(use-fg-bg yes)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

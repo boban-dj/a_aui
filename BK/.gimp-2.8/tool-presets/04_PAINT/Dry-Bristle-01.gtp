@@ -1,0 +1,26 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "Bristle - Dry  01")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (foreground (color-rgb 0.929412 0.083829 0.083829))
+    (opacity 0.757000)
+    (brush "Bristle Round 02")
+    (dynamics "Bristle Dry")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 100.000000)
+    (dynamics-expanded yes)
+    (gradient-reverse yes)
+    (rate 50.100000)
+    (flow 20.500000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
