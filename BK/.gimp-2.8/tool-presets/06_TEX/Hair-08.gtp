@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-paintbrush")
+(name "Hair 03 (Fine)")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (opacity 0.100000)
+    (brush "Hair11")
+    (dynamics "Opacity/Size")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 75.000000)
+    (application-mode incremental)
+    (jitter-amount 0.350000)
+    (dynamics-expanded yes)
+    (use-smoothing yes)
+    (smoothing-quality 70)
+    (smoothing-factor 550.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

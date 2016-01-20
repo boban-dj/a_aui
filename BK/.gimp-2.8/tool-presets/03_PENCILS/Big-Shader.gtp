@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-pencil")
+(name "Graphit Texture (Large)")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (brush "Brush268")
+    (dynamics "Shade")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 150.000000)
+    (jitter-amount 0.350000)
+    (dynamics-expanded yes)
+    (fade-length 30.000000)
+    (fade-unit percent)
+    (gradient-reverse yes)
+    (use-smoothing yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

@@ -1,0 +1,22 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-eraser")
+(name "3- Solid Cross 01")
+(tool-options "GimpEraserOptions"
+    (tool "gimp-eraser-tool")
+    (brush "Cross 3")
+    (dynamics "Dynamics Off")
+    (palette "Default")
+    (brush-size 100.000000)
+    (application-mode incremental)
+    (hard yes)
+    (dynamics-expanded yes))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

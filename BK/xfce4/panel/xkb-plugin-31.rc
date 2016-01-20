@@ -1,0 +1,11 @@
+display_type=1
+display_textsize=0
+group_policy=2
+default_group=0
+never_modify_config=false
+model=pc105+inet
+layouts=us,bg
+variants=,bas_phonetic
+toggle_option=grp:shifts_toggle
+compose_key_position=
+

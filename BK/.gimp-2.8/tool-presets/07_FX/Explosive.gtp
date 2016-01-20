@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "2 - FX Explosive")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (brush "Brush202")
+    (dynamics "Explosion")
+    (gradient "Rocket Fire")
+    (palette "Default")
+    (brush-size 300.000000)
+    (use-jitter yes)
+    (jitter-amount 0.700000)
+    (dynamics-expanded yes)
+    (fade-length 55.000000)
+    (fade-unit percent)
+    (rate 150.000000)
+    (flow 100.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient yes)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
