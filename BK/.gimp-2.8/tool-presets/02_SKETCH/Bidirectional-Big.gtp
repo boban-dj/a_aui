@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-paintbrush")
+(name "4 - Solid Bidirectional")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (brush "Flat01")
+    (dynamics "Pressure Sensitive Angel")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 80.000000)
+    (brush-angle -90.000000)
+    (jitter-amount 0.000000)
+    (dynamics-expanded yes)
+    (fade-length 50.000000)
+    (fade-unit percent)
+    (gradient-reverse yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

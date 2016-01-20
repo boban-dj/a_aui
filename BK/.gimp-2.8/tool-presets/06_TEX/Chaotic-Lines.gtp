@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "Chaotic Lines")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (opacity 0.950000)
+    (brush "Crosses12")
+    (dynamics "Random Size/Angel")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 150.000000)
+    (brush-angle 90.430000)
+    (jitter-amount 0.900000)
+    (dynamics-expanded yes)
+    (rate 125.000000)
+    (motion-only yes)
+    (flow 75.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

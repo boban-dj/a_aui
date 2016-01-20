@@ -1,0 +1,26 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-pencil")
+(name "Delayed")
+(tool-options "GimpPencilOptions"
+    (tool "gimp-pencil-tool")
+    (foreground (color-rgb 0.133149 0.237258 0.870588))
+    (opacity 0.100000)
+    (brush "Solid Round")
+    (dynamics "Opacity/Size")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 70.000000)
+    (application-mode incremental)
+    (use-smoothing yes)
+    (smoothing-quality 85)
+    (smoothing-factor 900.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
