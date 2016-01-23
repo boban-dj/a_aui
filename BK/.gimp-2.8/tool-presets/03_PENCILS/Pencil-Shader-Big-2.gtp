@@ -1,0 +1,25 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-pencil")
+(name "Pencil Shader Big")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (opacity 0.700000)
+    (brush "Bristle Square 01")
+    (dynamics "Pencil Shade")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 40.000000)
+    (jitter-amount 0.350000)
+    (dynamics-expanded yes)
+    (gradient-reverse yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
