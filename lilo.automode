@@ -84,7 +84,7 @@
   #11) i3
   #12) OpenBox
   #13) Xmonad
-  DESKTOPENV="8 11"
+  DESKTOPENV="8"
   #KDE {{{
     # 1) Choqok
     # 2) Digikam
@@ -107,7 +107,7 @@
     #11) Xcompmgr
     #12) Zathura
     #13) speedtest-cli
-    MISCAPPS="1 2 5 7 10"
+    MISCAPPS="1 7"
   #}}}
   #DISPLAY MANAGER {{{
     # 1) Elsa
@@ -137,7 +137,7 @@
   # 2) Wicd
   # 3) ConnMan
   # n) None
-  NETWORKMANAGER="2"
+  NETWORKMANAGER="1"
   #USB 3G MODEM SUPPORT
   USBMODEM="n"
 #}}}
@@ -158,7 +158,7 @@
   #14) Unified Remote
   #15) Zim
   #16) Plank
-  ACCESSORIES_OPTIONS="6 8 10 15"
+  ACCESSORIES_OPTIONS="6"
 #}}}
 #DEVELOPEMENT {{{
   # 1) Atom
@@ -173,7 +173,7 @@
   #10) OpenJDK
   #11) OracleJDK
   #12) NodeJS
-  DEVELOPMENT_OPTIONS="2 4 12"
+  DEVELOPMENT_OPTIONS="4"
   #ECLIPSE {{{
     # 1) Eclipse Classic
     # 2) Eclipse IDE for C/C++ Developers
@@ -203,7 +203,7 @@
     #13) uglify-js
     #14) underscore
     #15) yeoman
-    NODEJS_OPTIONS="3"
+    NODEJS_OPTIONS=""
   #}}}
 #}}}
 #OFFICE {{{
@@ -219,7 +219,7 @@
   #10) MediaElch
   #11) OCRFeeder
   #12) Xmind
-  OFFICE_OPTIONS="7 8 9"
+  OFFICE_OPTIONS="9"
 #}}}
 #SYSTEM TOOLS {{{
   # 1) ClamAV
@@ -233,7 +233,7 @@
   # 9) Webmin
   #10) Wine
   #11) Docker
-  SYSTEMTOOLS_OPTIONS="3 6 9"
+  SYSTEMTOOLS_OPTIONS="3"
 #}}}
 #GRAPHICS {{{
   # 1) Blender
@@ -247,7 +247,7 @@
   # 9) Shotwell
   #10) Simple Scan
   #11) XnViewMP
-  GRAPHICS_OPTIONS="10"
+  GRAPHICS_OPTIONS="1 6 10"
 #}}}
 #INTERNET {{{
   # 1) Browser
@@ -299,7 +299,7 @@
   #MAPPING {{{
     # 1) Google Earth
     # 2) NASA World Wind
-    MAPPING_OPTIONS="1"
+    MAPPING_OPTIONS=""
   #}}}
   #VNC|Desktop Share {{{
     # 1) Remmina
@@ -328,7 +328,7 @@
     #13) Timidity++
     #14) Tomahawk
     #15) quodlibet
-    AUDIO_PLAYER_OPTIONS="2 5"
+    AUDIO_PLAYER_OPTIONS=""
   #}}}
   #EDITORS|TOOLS {{{
     # 1) Audacity
@@ -369,7 +369,7 @@
     # 8) Openshot
     # 9) Pitivi
     #10) Transmageddon
-    VIDEO_EDITOR_OPTIONS="1-10"
+    VIDEO_EDITOR_OPTIONS=""
   #}}}
 #}}}
 #GAMES {{{
@@ -387,7 +387,7 @@
   #12) Terminal
   #13) PlayOnLinux
   #14) Steam
-  GAMES_OPTIONS="12"
+  GAMES_OPTIONS="7 12"
   #ACTION {{{
     # 1) Astromenace
     # 2) Counter-Strike 2D
@@ -456,7 +456,7 @@
     # 1) Frozen Bubble
     # 2) Puzzle Moppet
     # 3) Numptyphysics
-    PUZZLE=""
+    PUZZLE="1"
   #}}}
   #RPG {{{
     # 1) Ardentryst
@@ -512,7 +512,7 @@
   # 2) LAPP - APACHE, POSTGRESQL & PHP
   # 3) LEMP - NGINX, MariaDB & PHP
   # 4) LEPP - NGINX, POSTGRESQL & PHP
-  WEBSERVER=1
+  WEBSERVER=
   POSTGIS="n"
 #}}}
 #FONTS {{{
@@ -523,7 +523,7 @@
   # 5) ttf-ms-fonts
   # 6) ttf-vista-fonts
   # 7) wqy-microhei
-  FONTS_OPTIONS="1 3-7"
+  FONTS_OPTIONS="1 3 4 5"
 #}}}
 #EXTRA {{{
   # 1) Global Menu
