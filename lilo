@@ -549,11 +549,11 @@ install_basic_setup(){
   print_title "(UN)COMPRESS TOOLS - https://wiki.archlinux.org/index.php/P7zip"
   package_install "zip unzip unrar p7zip lzop cpio"
   pause_function
-  print_title "AVAHI - https://wiki.archlinux.org/index.php/Avahi"
-  print_info "Avahi is a free Zero Configuration Networking (Zeroconf) implementation, including a system for multicast DNS/DNS-SD discovery. It allows programs to publish and discovers services and hosts running on a local network with no specific configuration."
-  package_install "avahi nss-mdns"
-  is_package_installed "avahi" && system_ctl enable avahi-daemon
-  pause_function
+# print_title "AVAHI - https://wiki.archlinux.org/index.php/Avahi"
+#  print_info "Avahi is a free Zero Configuration Networking (Zeroconf) implementation, including a system for multicast DNS/DNS-SD discovery. It allows programs to publish and discovers services and hosts running on a local network with no specific configuration."
+#  package_install "avahi nss-mdns"
+#  is_package_installed "avahi" && system_ctl enable avahi-daemon
+#  pause_function
   print_title "ALSA - https://wiki.archlinux.org/index.php/Alsa"
   print_info "The Advanced Linux Sound Architecture (ALSA) is a Linux kernel component intended to replace the original Open Sound System (OSSv3) for providing device drivers for sound cards."
   package_install "alsa-utils alsa-plugins"
@@ -1435,8 +1435,9 @@ install_desktop_environment(){
       print_info "i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The stated goals for i3 include clear documentation, proper multi-monitor support, a tree structure for windows, and different modes like in vim."
       package_install "i3"
       package_install "dmenu"
+     aur_package_install "j4-dmenu-desktop-git"
       # config xinitrc
-      config_xinitrc "i3"
+      #config_xinitrc "i3"
       pause_function
       install_misc_apps "i3"
       install_themes "i3"
