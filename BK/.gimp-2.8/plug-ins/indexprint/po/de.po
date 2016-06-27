@@ -1,0 +1,529 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Indexprint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-25 21:42+0100\n"
+"PO-Revision-Date: 2013-05-15 21:02+0100\n"
+"Last-Translator: m.a.h\n"
+"Language-Team: german\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;label;title\n"
+"X-Poedit-Basepath: d:/python26/indexprint-v3xx/\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: translations\n"
+
+#: translations/GenerateIndexprint.py:654
+#: translations/GenerateIndexprint.py:660
+#, python-format
+msgid "Sheet %03d of %03d"
+msgstr "Blatt %03d von %03d"
+
+#: translations/gui.py:89
+msgid "Cannot find the glade file: "
+msgstr "Die glade-Datei wurde nicht gefunden:"
+
+#: translations/gui.py:90
+msgid "No dialog file found!"
+msgstr "Keine Dialog-Datei gefunden!"
+
+#: translations/gui.py:91
+msgid ""
+"Sorry, the dialog file IndexPrint.glade was not found.\n"
+"Check your installation please!"
+msgstr ""
+"Entschuldigung, die Dialogdatei 'IndexPrint.glade' wurde nicht gefunden.\n"
+"Bitte prüfen Sie Ihre Installation!"
+
+#: translations/gui.py:202
+msgid "Unhandled response ID for dialog:"
+msgstr "Unbehandelte Antwort ID für den Dialog:"
+
+#: translations/gui.py:522 translations/gui.py:582 translations/gui.py:606
+#: translations/gui.py:639
+#, python-format
+msgid "Missing section in config file. %s"
+msgstr "Fehlender Abschnitt in der config-Datei. %s"
+
+#: translations/gui.py:644
+#, python-format
+msgid "Cannot parse configuration file. %s"
+msgstr "Kann die Konfigurationsdatei nicht verarbeiten. %s"
+
+#: translations/gui.py:646
+msgid "Configuration file error"
+msgstr "Konfigurationsdatei Fehler"
+
+#: translations/gui.py:647
+msgid "Cannot parse configuration file. "
+msgstr "Kann die Konfigurationsdatei nicht verarbeiten."
+
+#: translations/gui.py:649
+#, python-format
+msgid "Problem opening configuration file. %s"
+msgstr "Konfigurationsdatei kann nicht geöffnet werden. %s"
+
+#: translations/gui.py:651
+msgid "Configuration file loading error"
+msgstr "Ladefehler der Konfigurationsdatei."
+
+#: translations/gui.py:652
+msgid "Problem opening configuration file."
+msgstr "Konfigurationsdatei kann nicht geöffnet werden."
+
+#: translations/Indexprint.py:99
+msgid "Collects images and put them on a sheet of paper."
+msgstr "Sammelt Bilddateien und bringt sie auf ein Blatt Papier."
+
+#: translations/IndexPrint.xml:164
+msgid ""
+"Choose an image type or types.\n"
+"Choose a directory were the images are located.\n"
+"Choose a directory to save the contactsheets."
+msgstr ""
+"Bilddateityp oder -typen wählen.\n"
+"Ordner wählen wo die Bilddateien gespeichert sind.\n"
+"Ordner wählen um die Kontaktabzüge zu speichern."
+
+#: translations/IndexPrint.xml:208
+msgid "Indexprint V3.10"
+msgstr "Indexprint V3.3x"
+
+#: translations/IndexPrint.xml:228
+msgid ""
+"Check imagetypes you want to retrieve.\n"
+"Notes:\n"
+"- .jpg includes .jp; .jpeg\n"
+"- .png\n"
+"- .tif includes .tiff\n"
+"- .xcf\n"
+"- .pcx\n"
+"- .bmp\n"
+"- .eps includes .ps"
+msgstr ""
+"Bilddateitypen auswählen die eingelesen werden sollen.\n"
+"Anmerkungen:\n"
+"- .jpg beinhaltet .jp; .jpeg\n"
+"- .png\n"
+"- .tif beinhaltet .tiff\n"
+"- .xcf\n"
+"- .pcx\n"
+"- .bmp\n"
+"- .eps beinhaltet .ps\n"
+"\n"
+"Unterstützte RAW-Formate :\n"
+"Panasonic: RW2\n"
+"Canon: CRW, CR2\n"
+"Nikon: NEF\n"
+"Pentax: PEF\n"
+"Sony: SR2, ARW\n"
+"Fuji: RAF\n"
+"Samsung: PEF\n"
+"Adobe: DNG"
+
+#: translations/IndexPrint.xml:250 translations/IndexPrint.xml:696
+msgid ".jpg"
+msgstr ".jpg"
+
+#: translations/IndexPrint.xml:261 translations/IndexPrint.xml:710
+msgid ".png"
+msgstr ".png"
+
+#: translations/IndexPrint.xml:275
+msgid ".tif"
+msgstr ".tif"
+
+#: translations/IndexPrint.xml:289
+msgid ".xcf"
+msgstr ".xcf"
+
+#: translations/IndexPrint.xml:305
+msgid ".pcx"
+msgstr ".pcx"
+
+#: translations/IndexPrint.xml:319
+msgid ".bmp"
+msgstr ".bmp"
+
+#: translations/IndexPrint.xml:335
+msgid ".eps"
+msgstr ".eps"
+
+#: translations/IndexPrint.xml:369
+msgid "<b>File type</b>"
+msgstr "<b>Dateityp</b>"
+
+#: translations/IndexPrint.xml:381
+msgid ""
+"Enter a part of a filename to select.\n"
+"Empty means doesnot matter.\n"
+"Text is not case-sensitive."
+msgstr ""
+"Geben Sie einen Teil eines Dateinames zum auswählen an. (optional)\n"
+"Groß- und Kleinschreibung ist gleichwertig."
+
+#: translations/IndexPrint.xml:409
+msgid "<b>Part of filename to select</b>"
+msgstr "<b>Teil eines Dateinames für Auswahl</b>"
+
+#: translations/IndexPrint.xml:425
+msgid "Choose a folder with images not an image."
+msgstr "Wählen Sie Bitte einen Ordner mit Bilddateien, nicht eine Bilddatei."
+
+#: translations/IndexPrint.xml:446
+msgid "<b>Open from location</b>"
+msgstr "<b>Aus Pfad öffnen</b>"
+
+#: translations/IndexPrint.xml:460
+msgid "Check if you want subdirectories be included."
+msgstr "Bitte anwählen falls Unterordner mit eingeschloßen werden sollen."
+
+#: translations/IndexPrint.xml:468
+msgid "Include subdirs?"
+msgstr "Unterordner einschließen?"
+
+#: translations/IndexPrint.xml:481
+msgid "<b>Subdirs</b>"
+msgstr "<b>Unterordner</b>"
+
+#: translations/IndexPrint.xml:503
+msgid "<b>Images to retrieve</b>"
+msgstr "<b>Zu ladende Bilddateien</b>"
+
+#: translations/IndexPrint.xml:530
+msgid ""
+"Choose your folder where you want \n"
+"to save the contactpage."
+msgstr ""
+"Wählen Sie den Ordner wo Sie \n"
+"den Kontaktabzug speichern möchten."
+
+#: translations/IndexPrint.xml:552
+msgid "<b>Save to location</b>"
+msgstr "<b>Speichern in</b>"
+
+#: translations/IndexPrint.xml:565
+msgid "The basename for your contactpage."
+msgstr "De basis bestandsnaam voor de indexprint"
+
+#: translations/IndexPrint.xml:576
+msgid "contactsheet"
+msgstr "Kontaktabzug"
+
+#: translations/IndexPrint.xml:585
+msgid "<b>Filename</b>"
+msgstr "<b>Dateiname</b>"
+
+#: translations/IndexPrint.xml:615
+msgid "Choose your papersize."
+msgstr "Papiergröße wählen."
+
+#: translations/IndexPrint.xml:639
+msgid "<b>Sheet size</b>"
+msgstr "<b>Papiergröße</b>"
+
+#: translations/IndexPrint.xml:651
+msgid "The base resolution of your contactpage."
+msgstr "Die Auflösung des Kontaktabzugs."
+
+#: translations/IndexPrint.xml:673
+msgid "<b>Resolution (dpi)</b>"
+msgstr "<b>Auflösung (dpi)</b>"
+
+#: translations/IndexPrint.xml:685
+msgid "Save your contactpage as .jpg or .png type."
+msgstr "Kontaktabzug als Dateityp .jpg oder .png speichern."
+
+#: translations/IndexPrint.xml:729
+msgid "<b>Type</b>"
+msgstr "<b>Typ</b>"
+
+#: translations/IndexPrint.xml:741
+msgid "The orientation of your contactpage."
+msgstr "Die Ausrichtung Ihres Kontaktabzuges."
+
+#: translations/IndexPrint.xml:752
+msgid "portrait"
+msgstr "Hochformat"
+
+#: translations/IndexPrint.xml:766
+msgid "landscape"
+msgstr "Querformat"
+
+#: translations/IndexPrint.xml:785
+msgid "<b>Orientation</b>"
+msgstr "<b>Ausrichtung</b>"
+
+#: translations/IndexPrint.xml:806
+msgid ""
+"Give the number of rows and columns.\n"
+"If the number of rows doesn't fit on the page\n"
+"it wil be scaled down automatically."
+msgstr ""
+"Bitte Anzahl der Zeilen und Spalten angeben. op\n"
+"Falls die Zeilenanzahl nicht auf die Seite passt,\n"
+"wird sie automatisch verringert."
+
+#: translations/IndexPrint.xml:816
+msgid "Number of rows:"
+msgstr "Anzahl der Zeilen:"
+
+#: translations/IndexPrint.xml:840
+msgid "Number of columns:"
+msgstr "Anzahl der Spalten:"
+
+#: translations/IndexPrint.xml:866
+msgid "<b>Image grid layout</b>"
+msgstr "<b>Layout des Bildgitters</b>"
+
+#: translations/IndexPrint.xml:883
+msgid "<b>Contactpage</b>"
+msgstr "<b>Kontaktabzug</b>"
+
+#: translations/IndexPrint.xml:907
+msgid ""
+"Give your margins. Be careful this\n"
+"is not the printermargin. Printermargins\n"
+"overrules this margins there is no checking."
+msgstr ""
+"Bitte Ränder angeben. Beachten Sie, dass dies nicht die\n"
+"Druckränder sind. Die Einstellung der Druckränder überschreibt diese Option!"
+
+#: translations/IndexPrint.xml:923
+msgid "top:"
+msgstr "Oben:"
+
+#: translations/IndexPrint.xml:929
+msgid "bottom:"
+msgstr "Unten:"
+
+#: translations/IndexPrint.xml:939
+msgid "left:"
+msgstr "Links:"
+
+#: translations/IndexPrint.xml:949
+msgid "right:"
+msgstr "Rechts:"
+
+#: translations/IndexPrint.xml:1033
+msgid "<b>Page border</b>"
+msgstr "<b>Seitenrand</b>"
+
+#: translations/IndexPrint.xml:1045
+msgid "Size of a whiteborder round every image."
+msgstr "Größe eines weißen Randes um jedes Bild."
+
+#: translations/IndexPrint.xml:1057
+msgid "whiteborder:"
+msgstr "weißer Rand:"
+
+#: translations/IndexPrint.xml:1086
+msgid "<b>Image</b>"
+msgstr "<b>Bild</b>"
+
+#: translations/IndexPrint.xml:1102
+msgid "<b>Margin [mm]</b>"
+msgstr "<b>Rand [mm]</b>"
+
+#: translations/IndexPrint.xml:1126
+msgid "Include list of imagenames?"
+msgstr ""
+"Liste der Bilddateinamen\n"
+"anzeigen?"
+
+#: translations/IndexPrint.xml:1130
+msgid ""
+"Creates a text based overview of\n"
+"your images. You can use it as a reference."
+msgstr ""
+"Erstellt zu Referenzzwecken einen textuellen Überblick\n"
+"über Ihre Bilddateien."
+
+#: translations/IndexPrint.xml:1139
+msgid "Direct printing?"
+msgstr "Direkt drucken?"
+
+#: translations/IndexPrint.xml:1143
+msgid ""
+"If you want to print the contactpage directly.\n"
+"It uses the standard printer driver of Gimp."
+msgstr ""
+"Wenn Sie den Kontaktabzug direkt drucken wollen.\n"
+"Es wird der Standarddrucker aus Gimp benutzt."
+
+#: translations/IndexPrint.xml:1155
+msgid "Include imagename?"
+msgstr "Bilddateinamen drucken?"
+
+#: translations/IndexPrint.xml:1159
+msgid ""
+"Check if you want an imagename\n"
+"printed."
+msgstr ""
+"Auswählen wenn Sie den Bilddateinamen\n"
+"mitdrucken wollen."
+
+#: translations/IndexPrint.xml:1172
+msgid "Imagename with extension?"
+msgstr "Bilddateinamen mit Dateiendung?"
+
+#: translations/IndexPrint.xml:1176
+msgid ""
+"Check if you want the extension of\n"
+"your image printed directly after\n"
+"the imagename."
+msgstr ""
+"Auswählen wenn Sie die Dateiendung Ihrer Bilddatei \n"
+"mitdrucken wollen."
+
+#: translations/IndexPrint.xml:1189
+msgid "Rotate images?"
+msgstr "Bilder drehen?"
+
+#: translations/IndexPrint.xml:1193
+msgid "Check if you want to rotate the images."
+msgstr "Auswählen wenn Sie die Bilder drehen wollen."
+
+#: translations/IndexPrint.xml:1207
+msgid "Images sorted alphanumeric?"
+msgstr "Bilder alphanumerisch sortieren?"
+
+#: translations/IndexPrint.xml:1211
+msgid ""
+"Check if you want your images are sorted.\n"
+"Be careful: a and A are not the same."
+msgstr ""
+"Auswählen wenn Sie Ihre Bilder sortieren möchten.\n"
+"Bitte beachten Sie: \"a\" und \"A\" sind unterschiedlich."
+
+#: translations/IndexPrint.xml:1227
+msgid ""
+"Choose your fontsize. Fontsize will automatically\n"
+"scaled down if the text is larger then \n"
+"the imagewidth."
+msgstr ""
+"Schriftgröße wählen. Die Schriftgröße wird automatisch\n"
+"verkleinert, falls der Text größer ist als die Bildbreite."
+
+#: translations/IndexPrint.xml:1233
+msgid "Font size max. [mm]"
+msgstr "Maximale Schriftgröße[mm]"
+
+#: translations/IndexPrint.xml:1262
+msgid ""
+"If you want your image has an other\n"
+"size than the native one."
+msgstr ""
+"Wenn Sie wollen, dass Ihr Bild eine andere\n"
+"Größe hat als das Original."
+
+#: translations/IndexPrint.xml:1267
+msgid "Image size or ratio"
+msgstr "Bildgröße oder Seitenverhältnis"
+
+#: translations/IndexPrint.xml:1304
+msgid "<b>Other</b>"
+msgstr "<b>Andere</b>"
+
+#~ msgid "Sheet %03d"
+#~ msgstr "Blad %03d"
+
+#~ msgid "raw"
+#~ msgstr "raw"
+
+#~ msgid "Choose the color of your background."
+#~ msgstr "Kies de achtergrondkleur"
+
+#~ msgid "<b>Background</b>"
+#~ msgstr "<b>Achtergrond</b>"
+
+#~ msgid "Enter your own pagesize in mm."
+#~ msgstr "Geef uw eigen afmetingen op."
+
+#~ msgid "height"
+#~ msgstr "hoogte:"
+
+#~ msgid "width"
+#~ msgstr "breedte"
+
+#~ msgid "<b>Custom size [mm]</b>"
+#~ msgstr "<b>Aangepaste afmetingen</b>"
+
+#~ msgid ""
+#~ "Enter the desired resolution\n"
+#~ "of you contactpage.\n"
+#~ "Higher settings give better results\n"
+#~ "but slow."
+#~ msgstr ""
+#~ "Geef de gewenste resolutie op van de contactpagina.\n"
+#~ "Hogere waarden geven een beter resultaat\n"
+#~ "maar werkt langzamer."
+
+#~ msgid ""
+#~ "Give the type of your contactpage\n"
+#~ "should be saved in."
+#~ msgstr ""
+#~ "Geef het type op waarin u uw contactpagina\n"
+#~ "opgeslagen wilt hebben."
+
+#~ msgid ""
+#~ "This header will be printed at\n"
+#~ "the top of each page."
+#~ msgstr ""
+#~ "De titel wordt boven aan\n"
+#~ "elk blad geprint."
+
+#~ msgid "<b>Header</b>"
+#~ msgstr "<b>Header</b>"
+
+#~ msgid ""
+#~ "Give the pagenumber to start with. \n"
+#~ "If total pages is checked the total\n"
+#~ "pages is also printed.\n"
+#~ "Remember the pagenumber effects\n"
+#~ "the filecounter."
+#~ msgstr ""
+#~ "Geef het startpaginanummer.\n"
+#~ "Indien totaal  pagina's atief is\n"
+#~ "dan wordt het totaal aantal\n"
+#~ "pagina's ook geprint.\n"
+#~ "Let op. De paginanumer heeft ook\n"
+#~ "invloed op de bestandsteller."
+
+#~ msgid "Starting pagenumber:"
+#~ msgstr "Start paginanumer:"
+
+#~ msgid "With total pages?"
+#~ msgstr "Met totaal aantal pagina's?"
+
+#~ msgid "<b>Pagenumber</b>"
+#~ msgstr "<b>Paginanummer</b>"
+
+#~ msgid "Include exif?"
+#~ msgstr "Inclusief exif?"
+
+#~ msgid ""
+#~ "Include the exif information: date and time,\n"
+#~ "iso, speed and F-number if exist. Oherwise\n"
+#~ "'no exif data' will be printed. Information will\n"
+#~ "be placed on a new row below imagename if exist."
+#~ msgstr ""
+#~ "Inclusief de exif informatie: date and time,\n"
+#~ "iso, speed en diafragma indien aanwezig anders\n"
+#~ "wordt er 'no exif data' geprint. De informatie\n"
+#~ "wordt op een nieuwe regel onder de\n"
+#~ "afbeeldingsnaam, indien aanwezig, geplaatst."
+
+#~ msgid ""
+#~ "Choose your image size or ratio.\n"
+#~ "It is possible that it affects the\n"
+#~ "number of columns/rows."
+#~ msgstr ""
+#~ "Kies uw afbeeldingsgrootte of verhouding.\n"
+#~ "Het is mogelijk dat het aantal kolommen\n"
+#~ "en/of rijen wordt aangepast."
+
+#~ msgid "Include exif: date and time?"
+#~ msgstr "Inclusief exif: date and time?"

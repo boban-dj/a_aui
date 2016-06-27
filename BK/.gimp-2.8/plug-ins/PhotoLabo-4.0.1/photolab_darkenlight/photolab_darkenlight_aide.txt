@@ -1,0 +1,23 @@
+Aide pour le python-fu photolab_darkenlight.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Objet : 
+Eclaire les tons sombres d'une image. 
+Ajoute un calque gris en mode Lumière douce sur lequel on applique un masque
+d'après le canal Valeur de l'image. Plus la Valeur d'un pixel est faible plus il 
+est sombre et plus il recevra de lumière douce pour l'éclaircir.
+
+Menu :
+Filtres / Photolabo / Eclarcir les tons sombres
+
+Variables :
+
+Luminosité = Luminosité apportée par le calque en mode Lumière douce, de
+0 à 255, la valeur 0 est neutre. 
+
+
+Notes :
+Une fois le calque ajouté vous pouvez jouer sur sa couleur de remplissage
+(en tons de gris) pour changer la luminosité. Utilisez de préférence l'outil
+Colorier et le curseur Luminosité ( Outils / Outils de couleurs / Colorier )

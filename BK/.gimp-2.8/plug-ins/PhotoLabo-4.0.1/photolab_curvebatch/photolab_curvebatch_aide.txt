@@ -1,0 +1,31 @@
+Aide pour le python-fu photolab_curvebatch.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+
+Objet : 
+Traitement automatisé d'un lot d'images avec un fichier enregistré depuis
+l'outil Courbes de Gimp. Fonctionne avec Gimp-2.6. Ne peut plus lire les
+courbes de Gimp-2.4 et antérieur.
+
+Menu :
+Filtres / Photolabo / Corrections par lot / Courbe
+
+
+Variables :
+
+Répertoire = répertoire de travail où sont stockées les images à traiter.
+Les nouveaux fichiers sont placés dans le même répertoire et préfixés par
+« CURVE_ », les anciens fichiers ne sont pas effacés
+
+Extension = seuls les fichiers portants cette extension seront
+renumérotés
+
+Fichier de Courbe = le fichier enregistré depuis l'outil 
+Courbes de Gimp ( Outils / Outils de couleurs / Courbes ). Les fichiers de 
+Courbes sont enregistrés par défaut dans votre répertoire utilisateur sous 
+« .gimp-2.6/curves »
+
+
+Problème :
+Si le fichier Courbe n'existe pas il ne se passe rien !

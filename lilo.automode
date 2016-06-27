@@ -47,7 +47,7 @@
   ZRAM="n"
   ZSH="n"
   OH_MY_ZSH="n"
-  PROPRIETARY_DRIVER="n" # Proprietary (NVIDIA) driver
+  PROPRIETARY_DRIVER="y" # Proprietary (NVIDIA) driver
   #FONT CONFIGURATION {{{
     # 1) Default
     # 2) Infinality
@@ -84,7 +84,7 @@
   #11) i3
   #12) OpenBox
   #13) Xmonad
-  DESKTOPENV="11"
+  DESKTOPENV="8"
   #KDE {{{
     # 1) Choqok
     # 2) Digikam
@@ -107,7 +107,7 @@
     #11) Xcompmgr
     #12) Zathura
     #13) speedtest-cli
-    MISCAPPS="5 7"
+    MISCAPPS="1 7"
   #}}}
   #DISPLAY MANAGER {{{
     # 1) Elsa
@@ -115,7 +115,7 @@
     # 3) LightDM
     # 4) SSDM
     # 5) Slim
-    DISPLAY_MANAGER=""
+    DISPLAY_MANAGER="3"
   #}}}
   # 1) Icons Themes
   # 2) GTK2|GTK3 Themes
@@ -139,7 +139,7 @@
   # n) None
   NETWORKMANAGER="1"
   #USB 3G MODEM SUPPORT
-  USBMODEM="2"
+  USBMODEM="n"
 #}}}
 #ACCESSORIES {{{
   # 1) Cairo Dock
@@ -219,7 +219,7 @@
   #10) MediaElch
   #11) OCRFeeder
   #12) Xmind
-  OFFICE_OPTIONS=""
+  OFFICE_OPTIONS="9"
 #}}}
 #SYSTEM TOOLS {{{
   # 1) ClamAV
@@ -233,7 +233,7 @@
   # 9) Webmin
   #10) Wine
   #11) Docker
-  SYSTEMTOOLS_OPTIONS="3 6"
+  SYSTEMTOOLS_OPTIONS="3"
 #}}}
 #GRAPHICS {{{
   # 1) Blender
@@ -247,7 +247,7 @@
   # 9) Shotwell
   #10) Simple Scan
   #11) XnViewMP
-  GRAPHICS_OPTIONS="2 10"
+  GRAPHICS_OPTIONS="1 6 10"
 #}}}
 #INTERNET {{{
   # 1) Browser
@@ -311,7 +311,7 @@
   # 1) Players
   # 2) Editors|Tools
   # 3) Codecs
-  AUDIO_OPTIONS="3"
+  AUDIO_OPTIONS="1-2"
   #PLAYERS {{{
     # 1) Amarok
     # 2) Audacious
@@ -336,14 +336,14 @@
     # 3) Google Music Manager
     # 4) OcenAudio
     # 5) Soundconverter|Soundkonverter
-    AUDIO_EDITOR_OPTIONS=""
+    AUDIO_EDITOR_OPTIONS="1"
   #}}}
 #}}}
 #VIDEO {{{
   # 1) Players
   # 2) Editors|Tools
   # 3) Codecs
-  VIDEO_OPTIONS="1 3"
+  VIDEO_OPTIONS="1-2"
   #PLAYERS {{{
     # 1) Audience
     # 2) Gnome Mplayer
@@ -387,7 +387,7 @@
   #12) Terminal
   #13) PlayOnLinux
   #14) Steam
-  GAMES_OPTIONS=""
+  GAMES_OPTIONS="7 12"
   #ACTION {{{
     # 1) Astromenace
     # 2) Counter-Strike 2D
@@ -523,7 +523,7 @@
   # 5) ttf-ms-fonts
   # 6) ttf-vista-fonts
   # 7) wqy-microhei
-  FONTS_OPTIONS="1 4 5"
+  FONTS_OPTIONS="1 3 4 5"
 #}}}
 #EXTRA {{{
   # 1) Global Menu

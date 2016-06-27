@@ -1,0 +1,23 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-paintbrush")
+(name "0 - Sketch Fine")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (brush "2. Hardness 100")
+    (dynamics "Sketch 1")
+    (gradient "FG to BG (RGB)")
+    (palette "Visibone 2")
+    (brush-size 67.000000)
+    (dynamics-expanded yes)
+    (use-smoothing yes)
+    (smoothing-factor 56.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
