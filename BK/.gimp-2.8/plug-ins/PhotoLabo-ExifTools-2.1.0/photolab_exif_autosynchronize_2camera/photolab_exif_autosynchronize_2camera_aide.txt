@@ -1,0 +1,63 @@
+Aide pour le python-fu photolab_exif_autosynchronize_2camera.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Objet : 
+Un traitement par lot qui s'applique à deux lots de photographies issues de deux
+appareils photographies numériques différents. Les photographies ont été prises en
+même temps et vous souhaitez les fusionner pour en faire un seul album. Pour les
+ranger dans l'ordre chronologique, le décalage d'horloge entre les deux appareils est
+calculé d'après deux photos de références qui doivent être prises au même instant.
+
+Dépendances :
+Les installations suivantes seront nécessaires tant que Gimp ne permettra pas de gérer 
+les données EXIF depuis un script.
+Pour les données EXIF, il faut installer JHead : 
+http://www.sentex.net/~mwandel/jhead/ 
+
+Menu :
+Filtres / Photolabo / Outils EXIF / Synchroniser deux appareils photos
+
+
+Variables :
+
+Première photo de référence = indiquer la photo qui va servir de référence
+pour l'horloge interne du premier appareil photo. 
+
+Utiliser un premier répertoire source ou une extension de fichier différent = Si
+cette option est mise à non, le répertoire dans lequel se situe la première photo
+de référence ainsi que son extension seront utilisées pour déterminer où se
+trouve les photos du premier appareil et quelle extension les photos ont. Si cette 
+option est mise à oui, il faut remplir les deux champs suivants.
+
+...Répertoire source du premier appareil = répertoire où sont stockées les images à traiter
+issues du premier appareil photo. Les photos seront copiées dans le Répertoire de
+destination. Les copies sont préfixées par la date de prise de vue
+
+...Extension = seuls les fichiers portants cette extension seront traités. Concerne les 
+fichiers du Répertoire source du premier appareil
+
+Deuxième photo de référence = indiquer la photo qui va servir de référence
+pour l'horloge interne du second appareil photo. La photo doit avoir été prise
+au même instant que la Première photo de référence
+
+Utiliser un deuxième répertoire source ou une extension de fichier différent = Si
+cette option est mise à non, le répertoire dans lequel se situe la seconde photo
+de référence ainsi que son extension seront utilisées pour déterminer où se
+trouve les photos du second appareil et quelle extension les photos ont. Si cette 
+option est mise à oui, il faut remplir les deux champs suivants.
+
+...Répertoire source du second appareil = répertoire où sont stockées les images à traiter
+issues du second appareil photo. Le répertoire source du premier et du second appareil
+ne peuvent pas être identiques. Les photos seront copiées dans le Répertoire de
+destination. Les copies sont préfixées par la date de prise de vue corrigée du décalage 
+horaire entre les horloges des deux appareils
+
+...Extension = seuls les fichiers portants cette extension seront traités. Concerne les 
+fichiers du Répertoire source du second appareil
+
+Répertoire de destination de la fusion = répertoire où sont copiées les images. Le 
+répertoire de destination peut être un des deux répertoire source. Attention, dans
+ce cas les fichiers du répertoire source identique au répertoire de destination ne
+seront pas copiées et ce sont les originaux qui seront modifiés.
+

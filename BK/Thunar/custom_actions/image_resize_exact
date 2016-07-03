@@ -1,0 +1,18 @@
+#!/bin/bash
+ 
+DEST="./images"
+mkdir -p $DEST
+
+# Resize 512x512\! = explicit; -resize 512x512^ -gravity center -extent 512x512 = crop and fill; Add a border to the images
+
+EXT=`zenity --title="Resize image" --entry --text="Enter the image size you want eg. 150x150"`
+
+for file
+    do
+    if [ ! -e $file ]
+        then
+        continue
+    fi
+    to_name="$DEST/"$(echo $file | cut -f1 -d.)".jpg"
+    convert -geometry $EXT\! -quality 100 "${file}" "${to_name}"
+done

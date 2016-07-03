@@ -1,0 +1,31 @@
+Help file for python-fu photolab_photoduplicate.py
+Author Raymond Ostertag
+License GNU/FDL
+
+Object : 
+Duplicate a portrait on paper of different size for printing
+
+Menu:
+Filters / Photolab / Photo duplicate
+
+Parameters :
+
+Paper sizes (300 DPI) = various size presets at 300 DPI for printing paper
+
+Width of the Paper for CUSTOM Paper = If you choose a custom paper then
+set the width in pixel here
+
+Height of the Paper for CUSTOM Paper = If you choose a custom paper then
+set the height in pixel here
+
+Conserve Size = If «YES», the original size in pixel of the portrait will be
+conserved and the paper filled with portraits as much as possible. The 
+parameter Number of duplications won't be used yet.
+
+Number of duplications = When the original size is not conserved then set here
+the number of portrait duplications on the paper. More duplications means 
+smaller portraits
+
+Offset between each duplication= Set the number of pixel between each
+portrait duplication
+

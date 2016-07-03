@@ -1,0 +1,26 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "Smoke/Foliage")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (opacity 0.750000)
+    (brush "Brush510")
+    (dynamics "Soft Spray")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 100.000000)
+    (use-jitter yes)
+    (jitter-amount 1.000000)
+    (dynamics-expanded yes)
+    (rate 100.000000)
+    (flow 75.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

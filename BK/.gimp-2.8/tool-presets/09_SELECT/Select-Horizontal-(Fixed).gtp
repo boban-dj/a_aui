@@ -1,0 +1,28 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-rect-select")
+(name "5 - Horizontal (Fixed)")
+(tool-options "GimpRectangleSelectOptions"
+    (aspect-denominator 30.000000)
+    (desired-fixed-height 25.000000)
+    (desired-fixed-size-height 200.000000)
+    (desired-fixed-size-width 200.000000)
+    (desired-fixed-width 25.000000)
+    (fixed-center yes)
+    (fixed-rule height)
+    (fixed-rule-active yes)
+    (overridden-fixed-aspect yes)
+    (overridden-fixed-size yes)
+    (tool "gimp-rect-select-tool")
+    (operation add)
+    (feather-radius 25.000000)
+    (corner-radius 50.000000))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

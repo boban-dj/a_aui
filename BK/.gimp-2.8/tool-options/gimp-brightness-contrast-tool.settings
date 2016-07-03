@@ -1,0 +1,48 @@
+# settings
+
+(GimpBrightnessContrastConfig "2016-06-14 09:52:15"
+    (time 1465890735)
+    (brightness 0.388235)
+    (contrast 0.364706))
+(GimpBrightnessContrastConfig "2016-06-04 12:46:24"
+    (time 1465037184)
+    (brightness 0.435294)
+    (contrast 0.552941))
+(GimpBrightnessContrastConfig "2016-06-04 11:43:28"
+    (time 1465033408)
+    (brightness 0.505882)
+    (contrast 0.235294))
+(GimpBrightnessContrastConfig "2016-06-04 07:58:39"
+    (time 1465019919)
+    (brightness 0.541176)
+    (contrast 0.235294))
+(GimpBrightnessContrastConfig "2016-06-04 07:58:13"
+    (time 1465019893)
+    (brightness 0.129412)
+    (contrast 0.141176))
+(GimpBrightnessContrastConfig "2016-06-04 07:57:56"
+    (time 1465019876)
+    (brightness 0.152941)
+    (contrast 0.058824))
+(GimpBrightnessContrastConfig "2016-06-04 07:57:38"
+    (time 1465019858)
+    (brightness 0.082353)
+    (contrast 0.164706))
+(GimpBrightnessContrastConfig "2016-06-04 07:57:19"
+    (time 1465019839)
+    (brightness 0.164706)
+    (contrast 0.117647))
+(GimpBrightnessContrastConfig "2016-06-04 07:56:57"
+    (time 1465019817)
+    (brightness 0.341176)
+    (contrast 0.094118))
+(GimpBrightnessContrastConfig "2016-06-04 07:56:23"
+    (time 1465019783)
+    (brightness 0.635294)
+    (contrast 0.364706))
+(GimpBrightnessContrastConfig "ysc"
+    (time 0)
+    (brightness 0.635294)
+    (contrast 0.364706))
+
+# end of settings

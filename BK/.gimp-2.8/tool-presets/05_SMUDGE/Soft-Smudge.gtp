@@ -1,0 +1,30 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-smudge")
+(name "Basic - Soft")
+(tool-options "GimpSmudgeOptions"
+    (tool "gimp-smudge-tool")
+    (foreground (color-rgb 0.121307 0.533333 0.189170))
+    (background (color-rgb 0.000000 0.000000 0.000000))
+    (opacity 0.607000)
+    (brush "RoundBlend")
+    (dynamics "Smudge Soft")
+    (palette "Default")
+    (brush-size 108.460000)
+    (brush-angle -89.420000)
+    (jitter-amount 0.339806)
+    (dynamics-expanded yes)
+    (fade-length 138.000000)
+    (fade-unit percent)
+    (smoothing-quality 30)
+    (smoothing-factor 25.800000)
+    (rate 95.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette yes)
+(use-font no)
+
+# end of GIMP tool preset file

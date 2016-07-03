@@ -1,0 +1,107 @@
+Aide pour le python-fu photolab_webgallery.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Option :
+Ce Python-fu utilisera PIL s'il est installé et il sera plus rapide.
+PIL : http://www.pythonware.com/products/pil/
+
+Objet : 
+Génère une galerie photo utilisable sur le web.
+Un exemple est visible à cette adresse internet :
+http://raymond.ostertag.free.fr/voyages/canada/index_1.html
+Ce programme est idéal pour présenter une série moyenne ou importante
+de photos qui seront présentées par des vignettes sur plusieurs pages.
+Des commentaires et un mode diaporama sont disponibles.
+Le format utilisé est XHTML+CSS2, un thème CSS extérieur est téléchargeable
+sur http://www.gimp-fr.org/contrib_photolabo.php
+
+Menu :
+Filtres / Photolabo / Galerie / Galerie Web
+
+
+Variables :
+
+Répertoire = répertoire de travail où sont stockées les photographies
+qui composeront la galerie.
+
+Extension = seuls les images portants cette extension seront
+renumérotés
+
+Titre = le titre que vous retrouverez en haut de chaque page de la galerie.
+
+Pied de page = le pied de page que vous retrouverez en bas de chaque page de 
+la galerie.
+
+Chemin HTML vers Méta-index = le lien vers le sommaire de vos galeries photos 
+ou bien vers votre site personnel.
+
+Chemin HTML vers Thème = indiquez l'endroit relatif où vous avez copier le 
+thème CSS que vous souhaitez utiliser, en principe «../theme» pour un thème 
+général à toutes vos galeries ou «theme» pour un thème particulier à cette 
+galerie.
+
+Taille des vignettes (pixels) = indiquez la taille maximale du plus GRAND coté
+des vignettes. 
+
+Taille redimensionnée (pixels) = indiquez la taille maximale du plus PETIT 
+coté des images visibles individuellement dans la galerie. 
+
+Taille de pleine page (pixels) = indiquez la taille maximale du plus PETIT
+coté des images affichables en pleine page (hors galerie). 
+
+Cadence du diaporama (s) = indiquez la cadence de rafraichissement des pages
+en mode diaporama.
+
+
+Alternatives :
+
+Fichier «title.txt» = s'il est trouvé dans le répertoire de travail, son
+contenu sera utilisé pour titrer la galerie. Le paramètre Titre n'est dès lors
+plus utilisé.
+
+Fichier «footer.txt» = s'il est trouvé dans le répertoire de travail, son
+contenu sera utilisé comme pied de page de la galerie. Le paramètre 
+Pied de page n'est dès lors plus utilisé.
+
+Fichier «metaindex.txt» = s'il est trouvé dans le répertoire de travail, son
+contenu sera utilisé comme meta-lien de la galerie. Le paramètre Méta-index 
+n'est dès lors plus utilisé.
+
+Fichier «comment.txt» = s'il est trouvé dans le répertoire de travail, son
+contenu sera utilisé pour commenter les images de la galerie. Par défaut le
+commentaire utilisé est le nom de fichier de l'image. 
+NOTA : Bien sûr le  fichier «comment.txt» doit contenir autant de lignes
+que d'images présentes dans la galerie. Il est pratique de commencer par
+renuméroter les images avec le python-fu «photolab_filerename» puis d'utiliser
+un éditeur de texte affichant les numéros de ligne.
+
+
+Problèmes :
+
+Si l'encodage des fichiers de texte n'est pas celui du système,  
+vous pouvez forcer manuellement l'encodage dans le Python-fu à la section 
+« System locale »
+
+Plus GRAND et plus PETIT coté. Il est pénible de devoir indiquer le plus
+GRAND coté pour les vignettes et le plus PETIT pour les autres images. En fait
+si vous utilisez des images panoramiques ou avec des formats larges, c'est
+la meilleure présentation que j'ai trouvé. Les images panoramiques sont 
+écrasées en vignettes, ce qui n'est pas génant, et elles occupent toute la 
+hauteur en pleine taille débordant en largeur certes mais il serait criminel
+de les écraser !
+http://raymond.ostertag.free.fr/voyages/mexique/html/ht_Mex_087.html
+
+Les images de pleine page sont optionnelles. Si vous mettez une valeur de
+taille égale ou inférieure à la taille redimensionnée alors les images ne
+sera pas générées. Pour le web je ne génère jamais de pleine page car ça
+prend trop de place mais pour un cédérom à montrer en famille je mets
+toujours les photos en pleine page histoire de mieux montrer les détails
+sur certaines photos.
+
+Vous devez effacer les images sources à la main ;) En fait mettez les bien
+de coté, on ne sait jamais dès fois que plus tard vous auriez envie de les
+retoucher !
+
+Il n'y a pas de système de cache, si vous relancez le python-fu alors tout
+est refait depuis le départ, ce qui peut s'avérer long.
