@@ -549,20 +549,20 @@ install_basic_setup(){
   print_title "(UN)COMPRESS TOOLS - https://wiki.archlinux.org/index.php/P7zip"
   package_install "zip unzip unrar p7zip lzop cpio"
   pause_function
-# print_title "AVAHI - https://wiki.archlinux.org/index.php/Avahi"
-#  print_info "Avahi is a free Zero Configuration Networking (Zeroconf) implementation, including a system for multicast DNS/DNS-SD discovery. It allows programs to publish and discovers services and hosts running on a local network with no specific configuration."
-#  package_install "avahi nss-mdns"
-#  is_package_installed "avahi" && system_ctl enable avahi-daemon
-#  pause_function
+  #print_title "AVAHI - https://wiki.archlinux.org/index.php/Avahi"
+  #print_info "Avahi is a free Zero Configuration Networking (Zeroconf) implementation, including a system for multicast DNS/DNS-SD discovery. It allows programs to publish and discovers services and hosts running on a local network with no specific configuration."
+  #package_install "avahi nss-mdns"
+  #is_package_installed "avahi" && system_ctl enable avahi-daemon
+  #pause_function
   print_title "ALSA - https://wiki.archlinux.org/index.php/Alsa"
   print_info "The Advanced Linux Sound Architecture (ALSA) is a Linux kernel component intended to replace the original Open Sound System (OSSv3) for providing device drivers for sound cards."
   package_install "alsa-utils alsa-plugins"
   [[ ${ARCHI} == x86_64 ]] && package_install "lib32-alsa-plugins"
   pause_function
-  print_title "PULSEAUDIO - https://wiki.archlinux.org/index.php/Pulseaudio"
-  print_info "PulseAudio is the default sound server that serves as a proxy to sound applications using existing kernel sound components like ALSA or OSS"
-  package_install "pulseaudio pulseaudio-alsa"
-  [[ ${ARCHI} == x86_64 ]] && package_install "lib32-libpulse"
+  #print_title "PULSEAUDIO - https://wiki.archlinux.org/index.php/Pulseaudio"
+  #print_info "PulseAudio is the default sound server that serves as a proxy to sound applications using existing kernel sound components like ALSA or OSS"
+  #package_install "pulseaudio pulseaudio-alsa"
+  #[[ ${ARCHI} == x86_64 ]] && package_install "lib32-libpulse"
   pause_function
   print_title "NTFS/FAT/exFAT/F2FS - https://wiki.archlinux.org/index.php/File_Systems"
   print_info "A file system (or filesystem) is a means to organize data expected to be retained after a program terminates by providing procedures to store, retrieve and update data, as well as manage the available space on the device(s) which contain it. A file system organizes data in an efficient manner and is tuned to the specific characteristics of the device."
@@ -816,8 +816,10 @@ install_video_cards(){
     XF86_DRIVERS=$(pacman -Qe | grep xf86-video | awk '{print $1}')
     [[ -n $XF86_DRIVERS ]] && pacman -Rcsn $XF86_DRIVERS
     package_install "libva-vdpau-driver"
-    pacman -S --needed nvidia{,-utils}
-    [[ ${ARCHI} == x86_64 ]] && pacman -S --needed lib32-nvidia-utils
+    #pacman -S --needed nvidia{,-utils}
+    # Deze drivers voor Dell M6600 Nvidia 4000M (NVC8 (GF110)	GeForce GTX (560 Ti OEM, 570, 580, 590,Quadro 3000M, 4000M, 5010M)
+    # source: https://nouveau.freedesktop.org/wiki/CodeNames/
+    [[ ${ARCHI} == x86_64 ]] && pacman -S --needed nvidia nvidia-lts nvidia-libgl
     replace_line '*options nouveau modeset=1' '#options nouveau modeset=1' /etc/modprobe.d/modprobe.conf
     replace_line '*MODULES="nouveau"' '#MODULES="nouveau"' /etc/mkinitcpio.conf
     mkinitcpio -p linux
@@ -1435,9 +1437,8 @@ install_desktop_environment(){
       print_info "i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The stated goals for i3 include clear documentation, proper multi-monitor support, a tree structure for windows, and different modes like in vim."
       package_install "i3"
       package_install "dmenu"
-     aur_package_install "j4-dmenu-desktop-git"
       # config xinitrc
-      #config_xinitrc "i3"
+      config_xinitrc "i3"
       pause_function
       install_misc_apps "i3"
       install_themes "i3"
