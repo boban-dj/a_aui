@@ -1,0 +1,26 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-eraser")
+(name "Y - Extreme Soft")
+(tool-options "GimpEraserOptions"
+    (tool "gimp-eraser-tool")
+    (foreground (color-rgb 0.121307 0.533333 0.189170))
+    (background (color-rgb 0.000000 0.000000 0.000000))
+    (opacity 0.050000)
+    (brush "Brush556")
+    (dynamics "Spray Brush SizeControl")
+    (palette "Default")
+    (brush-size 50.000000)
+    (application-mode incremental)
+    (use-jitter yes)
+    (jitter-amount 1.000000)
+    (dynamics-expanded yes))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

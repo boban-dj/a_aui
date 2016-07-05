@@ -1,0 +1,24 @@
+# GIMP tool preset file
+
+(stock-id "gimp-selection-none")
+(name "Crosses 02")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (opacity 0.950000)
+    (brush "Crosses11")
+    (dynamics "Shade")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 150.000000)
+    (jitter-amount 0.750000)
+    (dynamics-expanded yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

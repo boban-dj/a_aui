@@ -1,0 +1,25 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-paintbrush")
+(name "A Dot")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (brush "Round 100%")
+    (dynamics "Opacity Soft")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 40.000000)
+    (jitter-amount 1.720000)
+    (dynamics-expanded yes)
+    (fade-length 23.000000)
+    (fade-unit percent)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

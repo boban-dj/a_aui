@@ -1,0 +1,809 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------
+#Created by helmuthdu mailto: helmuthdu[at]gmail[dot]com
+#Contribution: flexiondotorg
+#-------------------------------------------------------------------------------
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#-------------------------------------------------------------------------------
+# Run this script after your first boot with archlinux (as root)
+
+
+################################################################################
+## CHECKS
+# 480 openssh check configs
+# 3338 mariadb install, check configs
+# 3390 configure_php_apache() check configs, check to install all php-modules
+# 3372 configure_php() check configs
+
+# maybe copy whole function with dialog, add webservices: source post-install
+	#~ options=(SSH "Remote console"	off
+	#~ Web "Apache + PHP5 + MariaDB(Mysql) A complete Web Server"	on
+	#~ Owncloud "Self-hosted cloud"	off
+	#~ Wordpress "Self-hosted blog"	off
+	#~ Subsonic "Music Server"	off
+	#~ Madsonic "Music Server"	off
+	#~ GitLab "Git Code server" off
+	#~ Gogs "Simple Git code server" off
+	#~ NTOP "Traffic monitoring tool"	off
+	#~ TightVNC "Remote screen server"	off
+	#~ Deluge "Torrent server with web UI"	off
+	#~ L2TP "VirtualPrivateNetwork Server L2TP, IPSEC"	off
+
+################################################################################
+## ADD FUNCTIONS
+
+# install_video_cards(): Nvidia load the correct drivers see TODO 
+# create_new_user(): groupadd video,audio,lp,optical,games,power,storage,http,lock,vboxusers,uucp
+# configure_user_account(): copy root dotfiles/a_aui/.bashrc /root
+
+# cannot choose xfce4 AND i3 to install. i3 also installs .xinitrc
+# WM: xfce4 dual session setup: copy .cache/session/xfce (change hostname)
+# WM xopy xfce panels for dual session
+# i3, i3status, i3 with conky (see Arch-Installer-1)
+
+# NOT INSTALLING? packer -S j4-dmenu-desktop-git
+# install_desktop_environment() install_icon_theme(): added faba-icon-theme-git dependancy not found when installing
+
+# ok: CLI: urxvt + configs, xterm
+# xargs all programs
+
+
+
+################################################################################
+## PERSONAL CONFS-TWEAKS
+# keyboard speed from xfce4?
+# mc disable F keys
+# other shortcut keys
+# copy shortcuts in Thunar (xfce4)
+# add helmuthdu .bashrc: systemctl functions and others
+# program specific configs: geany snippets,nanorc,Thunar custom, 
+# make cli menu my own programs
+# add cmus in audio section
+# audio codecs?
+# add geany
+
+################################################################################
+# ERRORS
+# 3631 error?: echo " 1) Global Menu $AUR"
+# 1128 dmenu not working: dmenu2 j4-dmenu-desktop-git was not installed (installed manually packer -S j4-dmenu-desktop)
+# bashrc:ruby not found,rbenv , perlbrew not found
+# i3 statusbar: icons not ok, ip addr not showing
+
+
+
+################################################################################
+## Xargs pacman
+
+# sudo xargs -a Packages pacman -S --noconfirm --needed
+# missing packages/not installing:
+	#~ error: target not found: #archassault-keyring
+	#~ error: target not found: #archassault-mirrorlist
+	#~ error: target not found: #arduino
+	#~ error: target not found: #php-mssql
+	#~ error: target not found: #php-pear
+	#~ error: target not found: #php-xcache
+	#~ error: target not found: #scalpel
+	
+#~ Error because virtualbox
+#~ error: failed to prepare transaction (conflicting dependencies)
+#~ :: lib32-nvidia-340xx-libgl and lib32-mesa-libgl are in conflict
+	
+#~ error: failed to prepare transaction (conflicting dependencies)
+#~ :: nvidia-340xx-libgl and mesa-libgl are in conflict
+	
+################################################################################	
+## Xargs packer
+# xargs -a Packages.aur packer -S --noconfirm
+
+
+
+
+
+
+if [[ -f `pwd`/sharedfuncs ]]; then
+  source sharedfuncs
+else
+  echo "missing file: sharedfuncs"
+  exit 1
+fi
+
+#ARCHLINUX U INSTALL {{{
+#WELCOME {{{
+welcome(){
+  clear
+  echo -e "${Bold}Welcome to the Archlinux U Install script by helmuthdu${White}"
+  print_line
+  echo "Requirements:"
+  echo "-> Archlinux installation"
+  echo "-> Run script as root user"
+  echo "-> Working internet connection"
+  print_line
+  echo "Script can be cancelled at any time with CTRL+C"
+  print_line
+  echo "http://www.github.com/helmuthdu/aui"
+  print_line
+  echo -e "\nBackups:"
+  print_line
+  # backup old configs
+  [[ ! -f /etc/pacman.conf.aui ]] && cp -v /etc/pacman.conf /etc/pacman.conf.aui || echo "/etc/pacman.conf.aui";
+  [[ -f /etc/ssh/sshd_config.aui ]] && echo "/etc/ssh/sshd_conf.aui";
+  [[ -f /etc/sudoers.aui ]] && echo "/etc/sudoers.aui";
+  pause_function
+  echo ""
+}
+
+#}}}
+#SELECT/CREATE USER {{{
+select_user(){
+  #CREATE NEW USER {{{
+  create_new_user(){
+    read -p "Username: " username
+    username=`echo $username | tr '[:upper:]' '[:lower:]'`
+    useradd -m -g users -G wheel -s /bin/bash ${username}
+    chfn ${username}
+    passwd ${username}
+    while [[ $? -ne 0 ]]; do
+      passwd ${username}
+    done
+    pause_function
+    configure_user_account
+  }
+
+    #EDITOR {{{
+    print_title "DEFAULT EDITOR"
+    editors_list=("emacs" "nano" "vi" "vim" "zile");
+    PS3="$prompt1"
+    echo -e "Select editor\n"
+    select EDITOR in "${editors_list[@]}"; do
+      if contains_element "$EDITOR" "${editors_list[@]}"; then
+        if [[ $EDITOR == vim ]]; then
+          ! is_package_installed "gvim" && package_install "vim ctags"
+          #VIMRC {{{
+          if [[ ! -f /home/${username}/.vimrc ]]; then
+            vimrc_list=("Default" "Vanilla" "Get from github");
+            PS3="$prompt1"
+            echo -e "Choose your .vimrc\n"
+            select OPT in "${vimrc_list[@]}"; do
+              case "$REPLY" in
+                1)
+                  package_install "git"
+                  git clone https://github.com/helmuthdu/vim
+                  mv vim /home/${username}/.vim
+                  ln -sf /home/${username}/.vim/vimrc /home/${username}/.vimrc
+                  cp -R vim /home/${username}/.vim/fonts /home/${username}/.fonts
+                  ;;
+                3)
+                  package_install "git"
+                  read -p "Enter your github username [ex: helmuthdu]: " GITHUB_USER
+                  read -p "Enter your github repository [ex: vim]: " GITHUB_REPO
+                  git clone https://github.com/$GITHUB_USER/$GITHUB_REPO
+                  cp -R $GITHUB_REPO/.vim /home/${username}/
+                  if [[ -f $GITHUB_REPO/vimrc ]]; then
+                    ln -sf /home/${username}/.vim/vimrc /home/${username}/.vimrc
+                  else
+                    ln -sf /home/${username}/.vim/.vimrc /home/${username}/.vimrc
+                  fi
+                  rm -fr $GITHUB_REPO
+                  ;;
+                2)
+                  echo "Nothing to do..."
+                  ;;
+                *)
+                  invalid_option
+                  ;;
+              esac
+              [[ -n $OPT ]] && break
+            done
+          fi
+          #}}}
+        else
+          package_install "$EDITOR"
+        fi
+        break
+      else
+        invalid_option
+      fi
+    done
+    #}}}
+    chown -R ${username}:users /home/${username}
+  }
+  #}}}
+  print_title "SELECT/CREATE USER - https://wiki.archlinux.org/index.php/Users_and_Groups"
+  users_list=(`cat /etc/passwd | grep "/home" | cut -d: -f1`);
+  PS3="$prompt1"
+  echo "Avaliable Users:"
+  if [[ $(( ${#users_list[@]} )) -gt 0 ]]; then
+    print_warning "WARNING: THE SELECTED USER MUST HAVE SUDO PRIVILEGES"
+  else
+    echo ""
+  fi
+  select OPT in "${users_list[@]}" "Create new user"; do
+    if [[ $OPT == "Create new user" ]]; then
+      create_new_user
+    elif contains_element "$OPT" "${users_list[@]}"; then
+      username=$OPT
+    else
+      invalid_option
+    fi
+    [[ -n $OPT ]] && break
+  done
+  [[ ! -f /home/${username}/.bashrc ]] && configure_user_account;
+  if [ -n "$http_proxy" ]; then
+      echo "proxy = $http_proxy" > /home/${username}/.curlrc
+      chown ${username}:users /home/${username}/.curlrc
+  fi
+}
+#}}}
+#CONFIGURE SUDO {{{
+configure_sudo(){
+  if ! is_package_installed "sudo" ; then
+    print_title "SUDO - https://wiki.archlinux.org/index.php/Sudo"
+    package_install "sudo"
+  fi
+  #CONFIGURE SUDOERS {{{
+  if [[ ! -f  /etc/sudoers.aui ]]; then
+    cp -v /etc/sudoers /etc/sudoers.aui
+    ## Uncomment to allow members of group wheel to execute any command
+    sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers
+    ## Same thing without a password (not secure)
+    #sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//' /etc/sudoers
+
+    #This config is especially helpful for those using terminal multiplexers like screen, tmux, or ratpoison, and those using sudo from scripts/cronjobs:
+    echo "" >> /etc/sudoers
+    echo 'Defaults !requiretty, !tty_tickets, !umask' >> /etc/sudoers
+    echo 'Defaults visiblepw, path_info, insults, lecture=once' >> /etc/sudoers
+    echo 'Defaults loglinelen=0, logfile =/var/log/sudo.log, log_year, log_host, syslog=auth' >> /etc/sudoers
+    echo 'Defaults passwd_tries=3, passwd_timeout=1' >> /etc/sudoers
+    echo 'Defaults env_reset, always_set_home, set_home, set_logname' >> /etc/sudoers
+    echo 'Defaults !env_editor, editor="/usr/bin/nano:/usr/bin/vim:/usr/bin/vi"' >> /etc/sudoers
+    echo 'Defaults timestamp_timeout=30' >> /etc/sudoers
+    echo 'Defaults passprompt="[sudo] password for %u: "' >> /etc/sudoers
+  fi
+  #}}}
+}
+#}}}
+#AUR HELPER {{{
+choose_aurhelper(){
+  print_title "AUR HELPER - https://wiki.archlinux.org/index.php/AUR_Helpers"
+  print_info "AUR Helpers are written to make using the Arch User Repository more comfortable."
+  print_warning "\tNone of these tools are officially supported by Arch devs."
+  aurhelper=("Yaourt" "Packer" "Pacaur")
+  PS3="$prompt1"
+  echo -e "Choose your default AUR helper to install\n"
+  select OPT in "${aurhelper[@]}"; do
+    case "$REPLY" in
+      1)
+        print_title "YAOURT - https://wiki.archlinux.org/index.php/Yaourt"
+        print_info "Yaourt (Yet AnOther User Repository Tool)"
+        if ! is_package_installed "yaourt" ; then
+          package_install "base-devel yajl namcap"
+          pacman -D --asdeps yajl namcap
+          aui_download_packages "package-query yaourt"
+          pacman -D --asdeps package-query
+          if ! is_package_installed "yaourt" ; then
+            echo "Yaourt not installed. EXIT now"
+            pause_function
+            exit 0
+          fi
+        fi
+        AUR_PKG_MANAGER="yaourt  --tmp /var/tmp/"
+        ;;
+      2)
+        if ! is_package_installed "packer" ; then
+          package_install "base-devel fakeroot expac git jshon"
+          pacman -D --asdeps jshon
+          aui_download_packages "packer"
+          if ! is_package_installed "packer" ; then
+            echo "Packer not installed. EXIT now"
+            pause_function
+            exit 0
+          fi
+        fi
+        AUR_PKG_MANAGER="packer"
+        ;;
+      3)
+        if ! is_package_installed "pacaur" ; then
+          package_install "base-devel yajl expac"
+          pacman -D --asdeps yajl expac
+          #fix pod2man path
+          ln -s /usr/bin/core_perl/pod2man /usr/bin/
+          aui_download_packages "cower pacaur"
+          pacman -D --asdeps cower
+          if ! is_package_installed "pacaur" ; then
+            echo "Pacaur not installed. EXIT now"
+            pause_function
+            exit 0
+          fi
+        fi
+        AUR_PKG_MANAGER="pacaur"
+        ;;
+      *)
+        invalid_option
+        ;;
+    esac
+    [[ -n $OPT ]] && break
+  done
+  pause_function
+}
+#}}}
+#AUTOMODE {{{
+automatic_mode(){
+  print_title "AUTOMODE"
+  print_info "Create a custom install with all options pre-selected.\nUse this option with care."
+  print_danger "\tUse this mode only if you already know all the option.\n\tYou won't be able to select anything later."
+  read_input_text "Enable Automatic Mode"
+  if [[ $OPTION == y ]]; then
+    $EDITOR ${AUI_DIR}/lilo.automode
+    source ${AUI_DIR}/lilo.automode
+    echo -e "The installation will start now."
+    pause_function
+    AUTOMATIC_MODE=1
+  fi
+}
+#}}}
+#CUSTOM REPOSITORIES {{{
+add_custom_repositories(){
+  print_title "CUSTOM REPOSITORIES - https://wiki.archlinux.org/index.php/Unofficial_User_Repositories"
+  read_input_text "Add custom repositories" $CUSTOMREPO
+  if [[ $OPTION == y ]]; then
+    while true
+    do
+      print_title "CUSTOM REPOSITORIES - https://wiki.archlinux.org/index.php/Unofficial_User_Repositories"
+      echo " 1) \"Add new repository\""
+      echo ""
+      echo " d) DONE"
+      echo ""
+      read -p "$prompt1" OPTION
+      case $OPTION in
+        1)
+          read -p "Repository Name [ex: custom]: " repository_name
+          read -p "Repository Address [ex: file:///media/backup/Archlinux]: " repository_addr
+          add_repository "${repository_name}" "${repository_addr}" "Never"
+          pause_function
+          ;;
+        "d")
+          break
+          ;;
+        *)
+          invalid_option
+          ;;
+      esac
+    done
+  fi
+}
+#}}}
+#BASIC SETUP {{{
+install_basic_setup(){
+ 
+  package_install "zip unzip unrar p7zip lzop cpio"
+  pause_function
+ 
+  package_install "alsa-utils alsa-plugins"
+  [[ ${ARCHI} == x86_64 ]] && package_install "lib32-alsa-plugins"
+  pause_function
+  
+  package_install "ntfs-3g dosfstools exfat-utils f2fs-tools fuse fuse-exfat autofs"
+  pause_function
+  
+  
+  
+}
+#}}}
+#SSH {{{
+install_ssh(){
+  print_title "SSH - https://wiki.archlinux.org/index.php/Ssh"
+
+    package_install "openssh"
+    system_ctl enable sshd
+    [[ ! -f /etc/ssh/sshd_config.aui ]] && cp -v /etc/ssh/sshd_config /etc/ssh/sshd_config.aui;
+    #CONFIGURE SSHD_CONF #{{{
+      sed -i '/Port 22/s/^#//' /etc/ssh/sshd_config
+      sed -i '/Protocol 2/s/^#//' /etc/ssh/sshd_config
+      sed -i '/HostKey \/etc\/ssh\/ssh_host_rsa_key/s/^#//' /etc/ssh/sshd_config
+      sed -i '/HostKey \/etc\/ssh\/ssh_host_dsa_key/s/^#//' /etc/ssh/sshd_config
+      sed -i '/HostKey \/etc\/ssh\/ssh_host_ecdsa_key/s/^#//' /etc/ssh/sshd_config
+      sed -i '/KeyRegenerationInterval/s/^#//' /etc/ssh/sshd_config
+      sed -i '/ServerKeyBits/s/^#//' /etc/ssh/sshd_config
+      sed -i '/SyslogFacility/s/^#//' /etc/ssh/sshd_config
+      sed -i '/LogLevel/s/^#//' /etc/ssh/sshd_config
+      sed -i '/LoginGraceTime/s/^#//' /etc/ssh/sshd_config
+      sed -i '/PermitRootLogin/s/^#//' /etc/ssh/sshd_config
+      sed -i '/HostbasedAuthentication/s/^#//' /etc/ssh/sshd_config
+      sed -i '/StrictModes/s/^#//' /etc/ssh/sshd_config
+      sed -i '/RSAAuthentication/s/^#//' /etc/ssh/sshd_config
+      sed -i '/PubkeyAuthentication/s/^#//' /etc/ssh/sshd_config
+      sed -i '/IgnoreRhosts/s/^#//' /etc/ssh/sshd_config
+      sed -i '/PermitEmptyPasswords/s/^#//' /etc/ssh/sshd_config
+      sed -i '/AllowTcpForwarding/s/^#//' /etc/ssh/sshd_config
+      sed -i '/AllowTcpForwarding no/d' /etc/ssh/sshd_config
+      sed -i '/X11Forwarding/s/^#//' /etc/ssh/sshd_config
+      sed -i '/X11Forwarding/s/no/yes/' /etc/ssh/sshd_config
+      sed -i -e '/\tX11Forwarding yes/d' /etc/ssh/sshd_config
+      sed -i '/X11DisplayOffset/s/^#//' /etc/ssh/sshd_config
+      sed -i '/X11UseLocalhost/s/^#//' /etc/ssh/sshd_config
+      sed -i '/PrintMotd/s/^#//' /etc/ssh/sshd_config
+      sed -i '/PrintMotd/s/yes/no/' /etc/ssh/sshd_config
+      sed -i '/PrintLastLog/s/^#//' /etc/ssh/sshd_config
+      sed -i '/TCPKeepAlive/s/^#//' /etc/ssh/sshd_config
+      sed -i '/the setting of/s/^/#/' /etc/ssh/sshd_config
+      sed -i '/RhostsRSAAuthentication and HostbasedAuthentication/s/^/#/' /etc/ssh/sshd_config
+    #}}}
+    pause_function
+}
+#}}}
+
+
+#XORG {{{
+install_xorg(){
+  print_title "XORG - https://wiki.archlinux.org/index.php/Xorg"
+  print_info "Xorg is the public, open-source implementation of the X window system version 11."
+  echo "Installing X-Server (req. for Desktopenvironment, GPU Drivers, Keyboardlayout,...)"
+  package_install "xorg-server xorg-server-utils xorg-server-xwayland xorg-xinit xorg-xkill xorg-apps"
+  package_install "xf86-input-synaptics xf86-input-mouse xf86-input-keyboard xf86-input-wacom xf86-input-libinput"
+  package_install "mesa"
+  package_install "gamin"
+  KEYMAP=$(localectl status | grep Keymap | awk '{print $3}')
+  localectl set-keymap ${KEYMAP}
+  pause_function
+}
+
+#VIDEO CARDS {{{
+install_video_cards(){
+  package_install "dmidecode"
+  print_title "VIDEO CARD"
+  
+  #NVIDIA {{{
+	${VIDEO_DRIVER} = nvidia
+    XF86_DRIVERS=$(pacman -Qe | grep xf86-video | awk '{print $1}')
+    [[ -n $XF86_DRIVERS ]] && pacman -Rcsn $XF86_DRIVERS
+    package_install "libva-vdpau-driver"
+    #pacman -S --needed nvidia{,-utils}
+    # Deze drivers voor Dell M6600 Nvidia 4000M (NVC8 (GF110)	GeForce GTX (560 Ti OEM, 570, 580, 590,Quadro 3000M, 4000M, 5010M)
+    # source: https://nouveau.freedesktop.org/wiki/CodeNames/
+    [[ ${ARCHI} == x86_64 ]] && pacman -S --needed nvidia nvidia-lts nvidia-libgl
+    replace_line '*options nouveau modeset=1' '#options nouveau modeset=1' /etc/modprobe.d/modprobe.conf
+    replace_line '*MODULES="nouveau"' '#MODULES="nouveau"' /etc/mkinitcpio.conf
+    mkinitcpio -p linux
+    nvidia-xconfig --add-argb-glx-visuals --allow-glx-with-composite --composite -no-logo --render-accel -o /etc/X11/xorg.conf.d/20-nvidia.conf;
+  #}}}
+  
+  if is_package_installed "libva-vdpau-driver"; then
+    add_line "export LIBVA_DRIVER_NAME=vdpau" "/etc/profile"
+  fi
+  pause_function
+}
+#}}}
+#CUPS {{{
+install_cups(){
+  print_title "CUPS - https://wiki.archlinux.org/index.php/Cups"
+  print_info "CUPS is the standards-based, open source printing system developed by Apple Inc. for Mac OS X and other UNIX-like operating systems."
+  read_input_text "Install CUPS (aka Common Unix Printing System)" $CUPS
+  if [[ $OPTION == y ]]; then
+    package_install "cups cups-filters ghostscript gsfonts"
+    package_install "gutenprint foomatic-db foomatic-db-engine foomatic-db-nonfree foomatic-filters hplip splix cups-pdf"
+    package_install "system-config-printer"
+    system_ctl enable org.cups.cupsd
+    pause_function
+  fi
+}
+#}}}
+
+
+#CONNMAN/NETWORKMANAGER/WICD {{{
+install_nm_wicd(){
+	print_title "NETWORK MANAGER"
+	print_title "WICD - https://wiki.archlinux.org/index.php/Wicd"
+	print_info "Wicd is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to NetworkManager."
+	package_install "wicd wicd-gtk"
+	# WICD daemon
+	system_ctl enable wicd
+	pause_function
+
+}
+
+
+
+#WEBSERVER {{{
+install_web_server(){
+  install_adminer(){ #{{{
+    aur_package_install "adminer"
+    local ADMINER=`cat /etc/httpd/conf/httpd.conf | grep Adminer`
+    [[ -z $ADMINER ]] && echo -e '\n# Adminer Configuration\nInclude conf/extra/httpd-adminer.conf' >> /etc/httpd/conf/httpd.conf
+  } #}}}
+  install_mariadb(){ #{{{
+    package_install "mariadb"
+    /usr/bin/mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+    system_ctl enable mysqld
+    systemctl start mysqld
+    /usr/bin/mysql_secure_installation
+  } #}}}
+  install_postgresql(){ #{{{
+    package_install "postgresql"
+    systemd-tmpfiles --create postgresql.conf
+    mkdir -p /var/lib/postgres
+    chown -R postgres:postgres /var/lib/postgres
+    echo "Enter your new postgres account password:"
+    passwd postgres
+    while [[ $? -ne 0 ]]; do
+      passwd postgres
+    done
+    su - postgres -c "initdb --locale ${LOCALE}.UTF-8 -D /var/lib/postgres/data"
+    system_ctl enable postgresql
+    system_ctl start postgresql
+    read_input_text "Install Postgis + Pgrouting" $POSTGIS
+    [[ $OPTION == y ]] && install_gis_extension
+  } #}}}
+  install_gis_extension(){ #{{{
+    package_install "postgis"
+    aur_package_install "pgrouting"
+  } #}}}
+  configure_php(){ #{{{
+    if [[ -f /etc/php/php.ini.pacnew ]]; then
+      mv -v /etc/php/php.ini /etc/php/php.ini.pacold
+      mv -v /etc/php/php.ini.pacnew /etc/php/php.ini
+      rm -v /etc/php/php.ini.aui
+    fi
+    [[ -f /etc/php/php.ini.aui ]] && echo "/etc/php/php.ini.aui" || cp -v /etc/php/php.ini /etc/php/php.ini.aui
+    if [[ $1 == mariadb ]]; then
+      sed -i '/mysqli.so/s/^;//' /etc/php/php.ini
+      sed -i '/mysql.so/s/^;//' /etc/php/php.ini
+      sed -i '/skip-networking/s/^/#/' /etc/mysql/my.cnf
+    else
+      sed -i '/pgsql.so/s/^;//' /etc/php/php.ini
+    fi
+    sed -i '/mcrypt.so/s/^;//' /etc/php/php.ini
+    sed -i '/gd.so/s/^;//' /etc/php/php.ini
+    sed -i '/display_errors=/s/off/on/' /etc/php/php.ini
+  } #}}}
+  configure_php_apache(){ #{{{
+    if [[ -f /etc/httpd/conf/httpd.conf.pacnew ]]; then
+      mv -v /etc/httpd/conf/httpd.conf.pacnew /etc/httpd/conf/httpd.conf
+      rm -v /etc/httpd/conf/httpd.conf.aui
+    fi
+    [[ -f /etc/httpd/conf/httpd.conf.aui ]] && echo "/etc/httpd/conf/httpd.conf.aui" || cp -v /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.aui
+    local IS_DISABLED=`cat /etc/httpd/conf/httpd.conf | grep php5_module.conf`
+    if [[ -z $IS_DISABLED ]]; then
+      echo -e 'application/x-httpd-php5                php php5' >> /etc/httpd/conf/mime.types
+      sed -i '/LoadModule dir_module modules\/mod_dir.so/a\LoadModule php5_module modules\/libphp5.so' /etc/httpd/conf/httpd.conf
+      echo -e '\n# Use for PHP 5.x:\nInclude conf/extra/php5_module.conf\n\nAddHandler php5-script php' >> /etc/httpd/conf/httpd.conf
+      #  libphp5.so included with php-apache does not work with mod_mpm_event (FS#39218). You'll have to use mod_mpm_prefork instead
+      replace_line 'LoadModule mpm_event_module modules/mod_mpm_event.so' 'LoadModule mpm_prefork_module modules/mod_mpm_prefork.so' /etc/httpd/conf/httpd.conf
+      replace_line 'DirectoryIndex\ index.html' 'DirectoryIndex\ index.html\ index.php' /etc/httpd/conf/httpd.conf
+    fi
+  } #}}}
+  configure_php_nginx(){ #{{{
+    if [[ -f /etc/nginx/nginx.conf.pacnew ]]; then
+      mv -v /etc/nginx/nginx.conf.pacnew /etc/nginx/nginx.conf
+      rm -v /etc/nginx/nginx.conf.aui
+    fi
+    [[ -f /etc/nginx/nginx.conf.aui ]] && cp -v /etc/nginx/nginx.conf.aui /etc/nginx/nginx.conf || cp -v /etc/nginx/nginx.conf /etc/nginx/nginx.conf.aui
+    sed -i -e '/location ~ \.php$ {/,/}/d' /etc/nginx/nginx.conf
+    sed -i -e '/pass the PHP/a\        #\n        location ~ \.php$ {\n            fastcgi_pass   unix:/var/run/php-fpm/php-fpm.sock;\n            fastcgi_index  index.php;\n            root           /srv/http;\n            include        fastcgi.conf;\n        }' /etc/nginx/nginx.conf
+  } #}}}
+  create_sites_folder(){ #{{{
+    [[ ! -f  /etc/httpd/conf/extra/httpd-userdir.conf.aui ]] && cp -v /etc/httpd/conf/extra/httpd-userdir.conf /etc/httpd/conf/extra/httpd-userdir.conf.aui
+    replace_line 'public_html' 'Sites' /etc/httpd/conf/extra/httpd-userdir.conf
+    su - ${username} -c "mkdir -p ~/Sites"
+    su - ${username} -c "chmod o+x ~/ && chmod -R o+x ~/Sites"
+    print_line
+    echo "The folder \"Sites\" has been created in your home"
+    echo "You can access your projects at \"http://localhost/~username\""
+    pause_function
+  } #}}}
+  print_title "WEB SERVER - https://wiki.archlinux.org/index.php/LAMP|LAPP"
+  print_info "*Adminer is installed by default in all options"
+  echo " 1) LAMP - APACHE, MariaDB & PHP"
+  echo " 2) LAPP - APACHE, POSTGRESQL & PHP"
+  echo " 3) LEMP - NGINX, MariaDB & PHP"
+  echo " 4) LEPP - NGINX, POSTGRESQL & PHP"
+  echo ""
+  echo " b) BACK"
+  echo ""
+  read_input $WEBSERVER
+  case "$OPTION" in
+    1)
+      package_install "apache php php-apache php-mcrypt php-gd"
+      install_mariadb
+      install_adminer
+      system_ctl enable httpd
+      configure_php_apache
+      configure_php "mariadb"
+      create_sites_folder
+      ;;
+    2)
+      package_install "apache php php-apache php-pgsql php-gd"
+      install_postgresql
+      install_adminer
+      system_ctl enable httpd
+      configure_php_apache
+      configure_php "postgresql"
+      create_sites_folder
+      ;;
+    3)
+      package_install "nginx php php-mcrypt php-fpm"
+      install_mariadb
+      system_ctl enable nginx
+      system_ctl enable php-fpm
+      configure_php_nginx
+      configure_php "mariadb"
+      ;;
+    4)
+      package_install "nginx php php-fpm php-pgsql"
+      install_postgresql
+      system_ctl enable nginx
+      system_ctl enable php-fpm
+      configure_php_nginx
+      configure_php "postgresql"
+      ;;
+  esac
+}
+#}}}
+
+#CLEAN ORPHAN PACKAGES {{{
+clean_orphan_packages(){
+  print_title "CLEAN ORPHAN PACKAGES"
+  pacman -Rsc --noconfirm $(pacman -Qqdt)
+  #pacman -Sc --noconfirm
+  pacman-optimize
+}
+#}}}
+
+
+#FINISH {{{
+finish(){
+  print_title "WARNING: PACKAGES INSTALLED FROM AUR"
+  print_danger "List of packages not officially supported that may kill your cat:"
+  pause_function
+  AUR_PKG_LIST="${AUI_DIR}/aur_pkg_list.log"
+  pacman -Qm | awk '{print $1}' > $AUR_PKG_LIST
+  less $AUR_PKG_LIST
+  print_title "INSTALL COMPLETED"
+  echo -e "Thanks for using the Archlinux Ultimate Install script by helmuthdu\n"
+  #REBOOT
+  read -p "Reboot your system [y/N]: " OPTION
+  [[ $OPTION == y ]] && reboot
+  exit 0
+}
+#}}}
+
+welcome
+check_root
+check_archlinux
+check_hostname
+check_connection
+check_pacman_blocked
+check_multilib
+pacman_key
+system_update
+language_selector
+configure_sudo
+select_user
+choose_aurhelper
+automatic_mode
+
+if is_package_installed "kdebase-workspace"; then KDE=1; fi
+
+while true
+do
+  print_title "ARCHLINUX U INSTALL - https://github.com/helmuthdu/aui modified for Boban"
+  echo " 1) $(mainmenu_item "${checklist[1]}" "Basic Setup")"
+  echo " 2) $(mainmenu_item "${checklist[2]}" "Desktop Environment|Window Manager")"
+  echo " 3) $(mainmenu_item "${checklist[3]}" "Accessories Apps")"
+  echo " 4) $(mainmenu_item "${checklist[4]}" "Development Apps")"
+  echo " 5) $(mainmenu_item "${checklist[5]}" "Office Apps")"
+  echo " 6) $(mainmenu_item "${checklist[6]}" "System Apps")"
+  echo " 7) $(mainmenu_item "${checklist[7]}" "Graphics Apps")"
+  echo " 8) $(mainmenu_item "${checklist[8]}" "Internet Apps")"
+  echo " 9) $(mainmenu_item "${checklist[9]}" "Audio Apps")"
+  echo "10) $(mainmenu_item "${checklist[10]}" "Video Apps")"
+  echo "11) $(mainmenu_item "${checklist[11]}" "Games")"
+  echo "12) $(mainmenu_item "${checklist[12]}" "Web server")"
+  echo "13) $(mainmenu_item "${checklist[13]}" "Fonts")"
+  echo "14) $(mainmenu_item "${checklist[14]}" "Extra")"
+  echo "15) $(mainmenu_item "${checklist[15]}" "Clean Orphan Packages")"
+  echo "16) $(mainmenu_item "${checklist[16]}" "Reconfigure System")"
+  echo ""
+  echo " q) Quit"
+  echo ""
+  MAINMENU+=" q"
+  read_input_options "$MAINMENU"
+  for OPT in ${OPTIONS[@]}; do
+    case "$OPT" in
+      1)
+        add_custom_repositories
+        install_basic_setup
+        install_ssh
+        install_video_cards
+        install_xorg
+        install_cups
+        checklist[1]=1
+        ;;
+      2)
+        if [[ checklist[1] -eq 0 ]]; then
+          print_danger "\nWARNING: YOU MUST RUN THE BASIC SETUP FIRST"
+          read_input_text "Are you sure you want to continue?"
+          [[ $OPTION != y ]] && continue
+        fi
+        install_nm_wicd
+        checklist[2]=1
+        ;;
+      3)
+        install_accessories_apps
+        checklist[3]=1
+        ;;
+      4)
+        install_development_apps
+        checklist[4]=1
+        ;;
+      5)
+        install_office_apps
+        checklist[5]=1
+        ;;
+      6)
+        install_system_apps
+        checklist[6]=1
+        ;;
+      7)
+        install_graphics_apps
+        checklist[7]=1
+        ;;
+      8)
+        install_internet_apps
+        checklist[8]=1
+        ;;
+      9)
+        install_audio_apps
+        checklist[9]=1
+        ;;
+      10)
+        install_video_apps
+        checklist[10]=1
+        ;;
+      11)
+        install_games
+        checklist[11]=1
+        ;;
+      12)
+        install_web_server
+        checklist[12]=1
+        ;;
+      13)
+        install_fonts
+        checklist[13]=1
+        ;;
+      14)
+        install_extra
+        checklist[14]=1
+        ;;
+      15)
+        clean_orphan_packages
+        checklist[15]=1
+        ;;
+      16)
+        print_danger "\nWARNING: THIS OPTION WILL RECONFIGURE THINGS LIKE HOSTNAME, TIMEZONE, CLOCK..."
+        read_input_text "Are you sure you want to continue?"
+        [[ $OPTION != y ]] && continue
+        reconfigure_system
+        checklist[16]=1
+        ;;
+      "q")
+        finish
+        ;;
+      *)
+        invalid_option
+        ;;
+    esac
+  done
+done
+#}}}

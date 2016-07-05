@@ -1,0 +1,24 @@
+Aide pour le python-fu photolab_softlight.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Objet : 
+Ajoute un calque en mode Lumière douce. 
+Si une sélection est présente un masque de calque contenant la sélection 
+est également ajouté
+
+Menu :
+Filtres / Photolabo / Calque en Lumière douce
+
+Variables :
+
+Luminosité = Luminosité apportée par le calque en mode Lumière douce, de
+-127 à +127, la valeur 0 est neutre. 
+Concrètement celà va déterminer la couleur de remplissage en tons de gris,
+sombre = noir, neutre = gris50%, clair = blanc.
+
+
+Notes :
+Une fois le calque ajouté vous pouvez jouer sur sa couleur de remplissage
+(en tons de gris) pour changer la luminosité. Utilisez de préférence l'outil
+Colorier et le curseur Luminosité ( Outils / Outils de couleurs / Colorier )

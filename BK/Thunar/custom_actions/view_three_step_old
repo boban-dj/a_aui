@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+#
+# Add a border to the images
+#
+convert -scale 1020x1020 -border 2x2 front.jpg x-front.jpg
+convert -scale 508x508   -border 2x2 side.jpg  x-side.jpg
+convert -scale 508x508   -border 2x2 top.jpg   x-top.jpg
+
+#
+# Annotate them
+#
+#convert x-front.jpg -draw "text 10,1010 'Front view'" x-front.jpg
+#convert x-side.jpg  -draw "text 10,498  'Side view'"   x-side.jpg
+#convert x-top.jpg   -draw "text 10,498  'Top view'"    x-top.jpg
+
+width=`identify -format %w x-front.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x100 caption:"A beautiful MilkyWay\!" x-front.jpg +swap -gravity south -composite  x-front.jpg
+
+width=`identify -format %w x-side.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"The butterfy from Bulgaria" x-side.jpg +swap -gravity south -composite  x-side.jpg
+
+width=`identify -format %w x-top.jpg`; convert -background '#0008' -fill white -gravity center -size ${width}x50 caption:"A baboon from Ed" x-top.jpg +swap -gravity west -composite  x-top.jpg
+
+
+#
+# Then combine them
+#
+montage -tile 1x2 -mode Concatenate x-top.jpg   x-side.jpg  x-right.jpg
+montage -tile 2x1 -mode Concatenate x-front.jpg x-right.jpg final.jpg
+
+#
+# Clean intermediate files
+#
+rm -f x-right.jpg x-front.jpg x-side.jpg x-top.jpg
+
+
+

@@ -1,0 +1,21 @@
+Help file for python-fu photolab_exif_stripexif.py
+Author Raymond Ostertag
+License GNU/FDL
+
+
+Object :
+Strip all unnecessary data from jpeg. Works in batch mode only
+
+Menu:
+Filters / Photolab / EXIF tools / Strip EXIF
+
+Usage :
+Choose you directory and the file extension on which to operate.
+
+
+Parameters :
+
+Directory = directory in which the batch is running and the files to handle are
+
+File extension = only the files with this extension will be treated
+

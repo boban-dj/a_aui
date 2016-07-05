@@ -1,0 +1,21 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-rect-select")
+(name "Rectangle Select")
+(tool-options "GimpRectangleSelectOptions"
+    (aspect-denominator 2185.039370)
+    (aspect-numerator 2185.039370)
+    (desired-fixed-size-height 185.000000)
+    (desired-fixed-size-width 185.000000)
+    (fixed-rule size)
+    (overridden-fixed-size yes)
+    (tool "gimp-rect-select-tool"))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

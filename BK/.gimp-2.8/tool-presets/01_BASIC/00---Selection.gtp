@@ -1,0 +1,17 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-move")
+(name "00 - MOVE (Selection)")
+(tool-options "GimpMoveOptions"
+    (tool "gimp-move-tool")
+    (move-type selection)
+    (move-current yes))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

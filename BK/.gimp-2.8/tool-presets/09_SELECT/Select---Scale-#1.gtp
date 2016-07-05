@@ -1,0 +1,18 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-scale")
+(name "Selection - Scale")
+(tool-options "GimpTransformOptions"
+    (tool "gimp-scale-tool")
+    (type selection)
+    (interpolation none)
+    (show-preview no))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
