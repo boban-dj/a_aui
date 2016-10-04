@@ -1,0 +1,25 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-paintbrush")
+(name "Oil Basic")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (foreground (color-rgb 0.501961 0.149604 0.149604))
+    (brush "oil05")
+    (dynamics "Paintbrush Basic")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 75.000000)
+    (application-mode incremental)
+    (jitter-amount 0.350000)
+    (dynamics-expanded yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

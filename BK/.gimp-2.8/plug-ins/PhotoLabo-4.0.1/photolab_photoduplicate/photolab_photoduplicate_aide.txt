@@ -1,0 +1,31 @@
+Aide pour le python-fu photolab_photoduplicate.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Objet : 
+Duplique un portrait sur des papiers de différents formats pour l'impression
+
+Menu :
+Filtres / Photolabo / Duplication de photo
+
+Variables :
+
+Taille du papier (300 PPP) = différentes valeurs préréglées de tailles de 
+papier pour une impression à 300 PPP
+
+Largeur du papier pour papier PERSONNALISE = Si vous optez pour une taille
+personnalisée, indiquez ici la largeur en pixel souhaitée
+
+Hauteur du papier pour papier PERSONNALISE = Si vous optez pour une taille
+personnalisée, indiquez ici la hauteur en pixel souhaitée
+
+Conserver la taille = Si mise à «OUI», la taille d'origine en pixels du portrait sera 
+conservée et le papier rempli avec autant de portraits possibles. Le paramètre 
+Nombre de duplications n'est dès lors plus utilisé
+
+Nombre de duplications = Lorsque la taille n'est pas conservée, on détermine
+le nombre de fois que le portrait va être dupliqué sur le papier. Plus il y a de
+duplications et plus le portrait sera petit
+
+Marge entre chaque duplication = Indique le nombre de pixels séparant 
+chaque portrait dupliqué

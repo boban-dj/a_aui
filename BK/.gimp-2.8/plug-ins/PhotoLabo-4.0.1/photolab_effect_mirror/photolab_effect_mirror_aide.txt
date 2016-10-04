@@ -1,0 +1,50 @@
+Aide pour le python-fu photolab_effect_mirror.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+
+Objet : 
+Créé un ou quatre effets miroir depuis une image. Travaille en mode solo
+ou en traitement par lot
+
+
+Menu:
+Filtres / Photolabo / Effet : miroir
+Filtres / Photolabo / Travail par lot / Effet : miroir
+
+Utilisation :
+Vous pouvez créer un effet miroir ou créer les quatre possibilités d'effets
+miroirs depuis une image.Directement depuis Gimp, le calque actif
+est utilisé pour créer le fond d'écran. Vous pouvez choisir d'exporter le 
+résultat dans un répertoire plutôt que de créer le résulat comme un calque
+dans votre fichier. Pour un traitement par lot, vous êtes sensé utiliser des 
+fichiers jpeg ou png (sans calques donc).
+
+
+Variables :
+
+Répertoire source = uniquement pour un traitement par lot, répertoire de travail 
+où sont stockées les images à traiter.
+
+Extension = seuls les fichiers portants cette extension seront
+traitées
+
+Répertoire de destination = l'effet miroir nouvellement créé sera 
+enregistré dans ce répertoire. Les répertoires Source et Destination peuvent
+être identiques, l'image d'origine ne sera pas effacée. Les noms des fichiers
+d'effets miroirs sont suffixés comme MIRROR_type_de_miroir
+
+Quoi faire ? = c'est un choix entre faire les quatres effets possibles ou un 
+seul comme indiqué ci-dessous
+
+Orientation du miroir = Horizontal ou vertical, fonctionne comme l'outil Miroir
+de GIMP
+
+Conserver le coté = le coté à réfléchir, c'est gauche ou droit pour un miroir
+horizontal et dessus ou dessous pour un miroir vertical
+
+Exportation = uniquement pour un mode solo, exporte le résultat au lieu de
+créer un nouveau calque de cadre dans le fichier original
+
+Répertoire d"exportation = uniquement pour un mode solo, comme le Répertoire de 
+destination

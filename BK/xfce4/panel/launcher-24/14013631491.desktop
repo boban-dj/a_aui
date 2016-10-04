@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Geany
+GenericName=Integrated Development Environment
+Comment=A fast and lightweight IDE using GTK2
+Exec=geany %F
+Icon=geany
+Terminal=false
+Categories=GTK;Development;IDE;
+MimeType=
+StartupNotify=true
+X-XFCE-Source=file:///usr/share/applications/geany.desktop

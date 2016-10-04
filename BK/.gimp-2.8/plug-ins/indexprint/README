@@ -1,0 +1,56 @@
+*********************************  README  ************************************
+************************* last update 23-okt-2012 *****************************
+
+Gimp Indexprint plugin (former contactsheet)
+
+Copyright
+=========
+Elmar Sullock Enzlin at moroquendo@gmail.com
+(C) 2009 ~ 2012, Utrecht, The Netherlands
+
+This plugin was tested with Gimp V2.6/2.8
+
+
+Installation:
+=============
+-Extract the contents of the zip-file into your own, local plugin directory.
+-Install pyexiv2 for use with exif information. This is a seperate install.
+-Install JPEG HDR plugin for use with HDR images. This is a seperate install.
+-Install ghostview/ghostscript for use with postscript images. This is a seperate install.
+-Window users should also add libglade to Gimp 2.6 bin directory. This is a seperate
+    installation. For Gimp 2.8 install ......... package
+-Linux: make indexprint.py executable.
+
+
+Uninstall:
+==========
+Delete plugin and plugin directory.
+
+
+Version:
+========
+# Latest version 4 development. For details see at www.sullockenzlin.demon.nl
+
+
+Discussion:
+===========
+Uses Glade3 graphical GUI designer and pygtk (requires gtk+ 2.16 or newer).
+
+It shows how to rebuild python plugins which uses PF widgets into plugins
+    which uses their own GUI's build with Glade and registered within Gimp. 
+
+
+Contents zip-file
+=================
+indexprint.py
+indexprint\readme                           #this file
+    |     \__init__.py
+    |     \gui.py
+    |     \GenerateIndexprint.py
+    |     \po                               #dir with basic translation files
+    |     \locale\<language>\LC_MESSAGES    #dir with available translations
+    |     \config                           #storing the configuration
+    |     \errorlog                         #stores the (error) messages
+    |     \docs                             #manual
+
+After running three additional files with the extension .pyc are created by Gimp.

@@ -1,0 +1,411 @@
+# <languagename> translations for indexprint V3.xx
+# Copyright (C) <year> <your name>
+# This file is distributed under the same license as indexprint.py
+# Elmar Sullock Enzlin <moroquendo@gmail.com>, 2009, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Indexprint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-25 21:42+0100\n"
+"PO-Revision-Date: 2010-11-25 21:42+0100\n"
+"Last-Translator: E. Sullock Enzlin <moroquendo@gmail.com>\n"
+"Language-Team: dutch <moroquendo@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+#: translations/GenerateIndexprint.py:654
+#: translations/GenerateIndexprint.py:660
+#, python-format
+msgid "Sheet %03d of %03d"
+msgstr ".."
+
+#: translations/gui.py:89
+msgid "Cannot find the glade file: "
+msgstr ".."
+
+#: translations/gui.py:90
+msgid "No dialog file found!"
+msgstr ".."
+
+#: translations/gui.py:91
+msgid ""
+"Sorry, the dialog file IndexPrint.glade was not found.\n"
+"Check your installation please!"
+msgstr ""
+".."
+
+#: translations/gui.py:202
+msgid "Unhandled response ID for dialog:"
+msgstr ".."
+
+#: translations/gui.py:522
+#: translations/gui.py:582
+#: translations/gui.py:606
+#: translations/gui.py:639
+#, python-format
+msgid "Missing section in config file. %s"
+msgstr ".."
+
+#: translations/gui.py:644
+#, python-format
+msgid "Cannot parse configuration file. %s"
+msgstr ".."
+
+#: translations/gui.py:646
+msgid "Configuration file error"
+msgstr ".."
+
+#: translations/gui.py:647
+msgid "Cannot parse configuration file. "
+msgstr ".."
+
+#: translations/gui.py:649
+#, python-format
+msgid "Problem opening configuration file. %s"
+msgstr ".."
+
+#: translations/gui.py:651
+msgid "Configuration file loading error"
+msgstr ".."
+
+#: translations/gui.py:652
+msgid "Problem opening configuration file."
+msgstr ".."
+
+#: translations/Indexprint.py:99
+msgid "Collects images and put them on a sheet of paper."
+msgstr ".."
+
+#: translations/IndexPrint.xml:164
+msgid ""
+"Choose an image type or types.\n"
+"Choose a directory were the images are located.\n"
+"Choose a directory to save the contactsheets."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:208
+msgid "Indexprint V3.10"
+msgstr ""
+
+#: translations/IndexPrint.xml:228
+msgid ""
+"Check imagetypes you want to retrieve.\n"
+"Notes:\n"
+"- .jpg includes .jp; .jpeg\n"
+"- .png\n"
+"- .tif includes .tiff\n"
+"- .xcf\n"
+"- .pcx\n"
+"- .bmp\n"
+"- .eps includes .ps"
+msgstr ""
+".."
+".."
+"- .jpg .... .jp; .jpeg\n"
+"- .png\n"
+"- .tif .... .tiff\n"
+"- .xcf\n"
+"- .pcx\n"
+"- .bmp\n"
+"- .eps ..... .ps"
+
+#: translations/IndexPrint.xml:250
+#: translations/IndexPrint.xml:696
+msgid ".jpg"
+msgstr ".jpg"
+
+#: translations/IndexPrint.xml:261
+#: translations/IndexPrint.xml:710
+msgid ".png"
+msgstr ".png"
+
+#: translations/IndexPrint.xml:275
+msgid ".tif"
+msgstr ".tif"
+
+#: translations/IndexPrint.xml:289
+msgid ".xcf"
+msgstr ".xcf"
+
+#: translations/IndexPrint.xml:305
+msgid ".pcx"
+msgstr ".pcx"
+
+#: translations/IndexPrint.xml:319
+msgid ".bmp"
+msgstr ".bmp"
+
+#: translations/IndexPrint.xml:335
+msgid ".eps"
+msgstr ".eps"
+
+#: translations/IndexPrint.xml:369
+msgid "<b>File type</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:381
+msgid ""
+"Enter a part of a filename to select.\n"
+"Empty means doesnot matter.\n"
+"Text is not case-sensitive."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:409
+msgid "<b>Part of filename to select</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:425
+msgid "Choose a folder with images not an image."
+msgstr ".."
+
+#: translations/IndexPrint.xml:446
+msgid "<b>Open from location</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:460
+msgid "Check if you want subdirectories be included."
+msgstr ".."
+
+#: translations/IndexPrint.xml:468
+msgid "Include subdirs?"
+msgstr ".."
+
+#: translations/IndexPrint.xml:481
+msgid "<b>Subdirs</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:503
+msgid "<b>Images to retrieve</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:530
+msgid ""
+"Choose your folder where you want \n"
+"to save the contactpage."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:552
+msgid "<b>Save to location</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:565
+msgid "The basename for your contactpage."
+msgstr ".."
+
+#: translations/IndexPrint.xml:576
+msgid "contactsheet"
+msgstr ".."
+
+#: translations/IndexPrint.xml:585
+msgid "<b>Filename</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:615
+msgid "Choose your papersize."
+msgstr ".."
+
+#: translations/IndexPrint.xml:639
+msgid "<b>Sheet size</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:651
+msgid "The base resolution of your contactpage."
+msgstr ".."
+
+#: translations/IndexPrint.xml:673
+msgid "<b>Resolution (dpi)</b>"
+msgstr "<b>.. (dpi)</b>"
+
+#: translations/IndexPrint.xml:685
+msgid "Save your contactpage as .jpg or .png type."
+msgstr ".."
+
+#: translations/IndexPrint.xml:729
+msgid "<b>Type</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:741
+msgid "The orientation of your contactpage."
+msgstr ".."
+
+#: translations/IndexPrint.xml:752
+msgid "portrait"
+msgstr ".."
+
+#: translations/IndexPrint.xml:766
+msgid "landscape"
+msgstr ".."
+
+#: translations/IndexPrint.xml:785
+msgid "<b>Orientation</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:806
+msgid ""
+"Give the number of rows and columns.\n"
+"If the number of rows doesn't fit on the page\n"
+"it wil be scaled down automatically."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:816
+msgid "Number of rows:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:840
+msgid "Number of columns:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:866
+msgid "<b>Image grid layout</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:883
+msgid "<b>Contactpage</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:907
+msgid ""
+"Give your margins. Be careful this\n"
+"is not the printermargin. Printermargins\n"
+"overrules this margins there is no checking."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:923
+msgid "top:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:929
+msgid "bottom:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:939
+msgid "left:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:949
+msgid "right:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:1033
+msgid "<b>Page border</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:1045
+msgid "Size of a whiteborder round every image."
+msgstr ".."
+
+#: translations/IndexPrint.xml:1057
+msgid "whiteborder:"
+msgstr ".."
+
+#: translations/IndexPrint.xml:1086
+msgid "<b>Image</b>"
+msgstr "<b>..</b>"
+
+#: translations/IndexPrint.xml:1102
+msgid "<b>Margin [mm]</b>"
+msgstr "<b>.. [mm]</b>"
+
+#: translations/IndexPrint.xml:1126
+msgid "Include list of imagenames?"
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1130
+msgid ""
+"Creates a text based overview of\n"
+"your images. You can use it as a reference."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1139
+msgid "Direct printing?"
+msgstr ".."
+
+#: translations/IndexPrint.xml:1143
+msgid ""
+"If you want to print the contactpage directly.\n"
+"It uses the standard printer driver of Gimp."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1155
+msgid "Include imagename?"
+msgstr ".."
+
+#: translations/IndexPrint.xml:1159
+msgid ""
+"Check if you want an imagename\n"
+"printed."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1172
+msgid "Imagename with extension?"
+msgstr ".."
+
+#: translations/IndexPrint.xml:1176
+msgid ""
+"Check if you want the extension of\n"
+"your image printed directly after\n"
+"the imagename."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1189
+msgid "Rotate images?"
+msgstr ".."
+
+#: translations/IndexPrint.xml:1193
+msgid "Check if you want to rotate the images."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1207
+msgid "Images sorted alphanumeric?"
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1211
+msgid ""
+"Check if you want your images are sorted.\n"
+"Be careful: a and A are not the same."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1227
+msgid ""
+"Choose your fontsize. Fontsize will automatically\n"
+"scaled down if the text is larger then \n"
+"the imagewidth."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1233
+msgid "Font size max. [mm]"
+msgstr ".. [mm]"
+
+#: translations/IndexPrint.xml:1262
+msgid ""
+"If you want your image has an other\n"
+"size than the native one."
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1267
+msgid "Image size or ratio"
+msgstr ""
+".."
+
+#: translations/IndexPrint.xml:1304
+msgid "<b>Other</b>"
+msgstr "<b>..</b>"
+

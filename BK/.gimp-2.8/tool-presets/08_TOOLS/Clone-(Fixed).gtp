@@ -1,0 +1,27 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-clone")
+(name "2 - Clone (Fixed)")
+(tool-options "GimpCloneOptions"
+    (tool "gimp-clone-tool")
+    (foreground (color-rgb 0.541176 0.200000 0.141176))
+    (brush "Round 100%")
+    (dynamics "Airbrush")
+    (pattern "Pine")
+    (palette "Default")
+    (brush-size 50.000000)
+    (hard yes)
+    (dynamics-expanded yes)
+    (fade-length 30.000000)
+    (fade-unit percent)
+    (align-mode fixed)
+    (sample-merged yes))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

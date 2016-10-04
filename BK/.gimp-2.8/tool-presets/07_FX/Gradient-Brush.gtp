@@ -1,0 +1,28 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-posterize")
+(name "1 - Gradient - Brush (Pressure)")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (foreground (color-rgb 0.862745 0.077816 0.077816))
+    (brush "Medium Round")
+    (dynamics "Pressure Gradient")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 100.000000)
+    (jitter-amount 1.220000)
+    (dynamics-expanded yes)
+    (fade-length 30.000000)
+    (fade-unit percent)
+    (gradient-reverse yes)
+    (rate 100.000000)
+    (flow 75.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

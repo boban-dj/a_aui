@@ -1,0 +1,51 @@
+Aide pour le python-fu photolab_greypoint.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+
+Objet : 
+Détermine un point gris dans l'image en ajustant les canaux de couleurs. Les 
+canaux ne sont pas mélanges, seuls les poids respectifs des canaux sont
+modifiés. Le point gris de référence peut être changé en un point coloré au
+cas où vous n'auriez pas de « supposé » gris pur dans la photo.
+
+
+Menu:
+Filters / Photolabo / Point gris
+Filters / Photolabo / Travail par lot / Point gris
+
+Utilisation :
+Premièrement cliquez sur Couleur à ajuster dans la boîte de dialogue du
+greffon pour ouvrir le sélecteur de couleurs et pointez dans l'image la couleur
+à transformer en gris. Ensuite déterminer optionnellement le Gris de référence
+si vous souhaitez un gris légèrement coloré à la palce d'un gris pur comme
+couleur de référence. Il est préférable de cocher Préserver le blanc et le noir
+si vous avez des pixels purement blanc ou noir dans l'image.
+
+
+Variables :
+
+Répertoire source = uniquement pour un traitement par lot, répertoire de travail 
+où sont stockées les images à traiter.
+
+Extension = uniquement pour un traitement par lot, seuls les fichiers portants 
+cette extension seront traités
+
+Répertoire de destination = uniquement pour un traitement par lot, l'image
+nouvellement créé sera enregistrée dans ce répertoire. Les répertoires Source et 
+Destination peuvent être identiques, l'image d'origine ne sera pas effacée. Le
+nom de la nouvelle image est suffixée avec le mot CADRE
+
+Couleur d'ajustement = la couleur qui va être transformée en gris de référence.
+Vous pouvez cliquer dans la couleur pour ouvrir le sélecteur de couleur et
+depuis ce dernier capturer une couleur dans l'image. Il est aussi possible de
+glisser-déposer toute couleur depuis la boîte à outils.
+
+Gris de référence = la couleur de destination de la couleur d'ajustement.
+
+Préserver le blanc et le noir = si vous choisissez Non (mixeur de canaux) alors
+ce sera le mixeur de canaux qui sera utilisé pour ajuster le point gris. Dans
+ce cas la transformation de couleur est linéaire et affecte les pixels blancs
+et noirs. Si vous choisissez Oui (courbes) alors ce sera l'outil Courbes qui
+sera utilisé pour ajuster le point gris. Dans ce cas la transformation de 
+couleur est non-linéaire et les pixels blanc et noir ne sont pas affectés.

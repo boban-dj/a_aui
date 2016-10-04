@@ -1,0 +1,49 @@
+Aide pour le python-fu photolab_exif_synchronize_2camera.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Objet : 
+Un traitement par lot qui s'applique à deux lots de photographies issues de deux
+appareils photographies numériques différents. Les photographies ont été prises en
+même temps et vous souhaitez les fusionner pour en faire un seul album. Pour les
+ranger dans l'ordre chronologique, un décalage de temps permet d'indiquer
+manuellement le décalage d'horloge entre les deux appareils.
+
+Dépendances :
+Les installations suivantes seront nécessaires tant que Gimp ne permettra pas de gérer 
+les données EXIF depuis un script.
+Pour les données EXIF, il faut installer JHead : 
+http://www.sentex.net/~mwandel/jhead/ 
+
+Menu :
+Filtres / Photolabo / Outils EXIF / Synchroniser deux appareils photos
+
+
+Variables :
+
+Répertoire source du premier appareil = répertoire où sont stockées les images à traiter
+issues du premier appareil photo. Les photos seront copiées dans le Répertoire de
+destination. Les copies sont préfixées par la date de prise de vue
+
+Extension = seuls les fichiers portants cette extension seront traités. Concerne les 
+fichiers du Répertoire source du premier appareil
+
+Signe = indiquer le sens du décalage horaire entre les horloges des deux appareils
+
+Jours / Heures / Minutes /Secondes = indiquer le nombre de jours,
+heures, minutes et secondes du décalage horaire entre les horloges des deux appareils
+
+Répertoire source du second appareil = répertoire où sont stockées les images à traiter
+issues du second appareil photo. Le répertoire source du premier et du second appareil
+ne peuvent pas être identiques. Les photos seront copiées dans le Répertoire de
+destination. Les copies sont préfixées par la date de prise de vue corrigée du décalage 
+horaire entre les horloges des deux appareils
+
+Extension = seuls les fichiers portants cette extension seront traités. Concerne les 
+fichiers du Répertoire source du second appareil
+
+Répertoire de destination de la fusion = répertoire où sont copiées les images. Le 
+répertoire de destination peut être un des deux répertoire source. Attention, dans
+ce cas les fichiers du répertoire source identique au répertoire de destination ne
+seront pas copiées et ce sont les originaux qui seront modifiés.
+
