@@ -1,0 +1,16 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-rotate")
+(name "Transform - Rotate")
+(tool-options "GimpTransformOptions"
+    (tool "gimp-rotate-tool")
+    (interpolation linear))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

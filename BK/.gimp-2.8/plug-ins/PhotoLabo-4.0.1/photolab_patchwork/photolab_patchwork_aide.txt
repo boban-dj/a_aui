@@ -1,0 +1,49 @@
+Aide pour le python-fu photolab_patchwork.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+
+Objet : 
+Create a patchwork d'images depuis un répertoire. Deux modèles sont
+disponibles pour 3 ou 4 images.
+
+
+Menu :
+Filtres / Photolabo / Travail par lot / Patchwork
+
+Utilisation :
+Utile pour imprimer 3 ou 4 photos d'un même thème comme une seule photo plus
+grande. Le premier modèle est constitué de 3 photos en diagonale sur un papier
+vertical. Le second modèle est constitué de 4 photos cote à cote sur un papier
+horizontal. Vous pouvez ajouter un cadre autour de chaque photo et aussi une
+image de fond ou remplir le fond avec un motif.
+Useful to print 3 or 4 photos of the same theme as a one bigger photo. The first 
+
+
+Variables :
+
+Répertoire source = répertoire de travail où sont stockées les images à traiter
+
+Extension = seuls les fichiers portants cette extension seront traités
+
+Taille d'image (%) = pourcentage en taille pour chaque photo de l'image
+patchwork finale. Avec un % élevé, les photos se superposent et avec un %
+faible vous laisse apparaître le fond
+
+Resolution (ppp) = résolution d'impression pour la taille du papier
+
+Taille du papier = taille imprimée du papier, avec la résolution le script
+calcule la taille en pixal de l'image patchwork finale
+
+Taille du cadre (px) = taille en pixel du cadre dessiné autour de chaque photo
+
+Couleur du cadre = couleur pleine du cadre dessiné autour de chaque photo
+
+Type de fond = choisissez le type de remplissage du fond
+
+Couleur de fond = couleur pleine utilisée pour remplir le fond
+
+Motif de fond = motif utilisé pour remplir le fond
+
+Image de fond = image utilisée pour remplir le fond. l'image sera redimensionnée
+et découpée en fonction de la taille du papier pour remplir tout le papier 

@@ -1,0 +1,26 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-pencil")
+(name "Pencil 6B")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (opacity 0.750000)
+    (brush "Pencil03")
+    (dynamics "Pencil")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 18.000000)
+    (jitter-amount 0.350000)
+    (dynamics-expanded yes)
+    (gradient-reverse yes)
+    (use-smoothing yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

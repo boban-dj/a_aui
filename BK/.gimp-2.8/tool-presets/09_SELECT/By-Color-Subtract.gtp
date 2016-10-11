@@ -1,0 +1,19 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-by-color-select")
+(name "3 - Subtract")
+(tool-options "GimpRegionSelectOptions"
+    (tool "gimp-by-color-select-tool")
+    (operation subtract)
+    (feather yes)
+    (feather-radius 4.000000)
+    (threshold 18.000000))
+(use-fg-bg no)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

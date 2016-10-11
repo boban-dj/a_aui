@@ -1,0 +1,24 @@
+# GIMP tool preset file
+
+(stock-id "gimp-selection-stroke")
+(name "Cross Shader 02 (Perspective)")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (opacity 0.680000)
+    (brush "Crosses02")
+    (dynamics "Perspective Texture")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 130.000000)
+    (jitter-amount 0.860000)
+    (dynamics-expanded yes)
+    (smoothing-quality 30))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
