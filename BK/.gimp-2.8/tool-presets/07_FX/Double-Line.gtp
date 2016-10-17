@@ -1,0 +1,29 @@
+# GIMP tool preset file
+
+(stock-id "gimp-toilet-paper")
+(name "Tube 4")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (opacity 0.950000)
+    (brush "Test03")
+    (dynamics "Directional Airbrush 2")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 80.000000)
+    (brush-angle -90.000000)
+    (dynamics-expanded yes)
+    (fade-length 35.000000)
+    (fade-unit percent)
+    (smoothing-quality 86)
+    (smoothing-factor 178.000000)
+    (rate 150.000000)
+    (flow 48.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

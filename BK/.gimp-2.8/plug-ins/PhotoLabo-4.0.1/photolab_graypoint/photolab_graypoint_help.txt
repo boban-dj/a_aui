@@ -1,0 +1,49 @@
+Help file for python-fu photolab_graypoint.py
+Author Raymond Ostertag
+License GNU/FDL
+
+
+Object :
+Set a gray point in the image by adjusting the color channels. The channels are
+not mixed only the weight of each channels is adjusted. The reference gray
+point can be turned in a colored point in case of you don't have any "supposed"
+pure grey in your photo. 
+
+
+Menu:
+Filters / Photolab / Graypoint
+Filters / Photolab / Batch works / Graypoint
+
+Usage :
+First pick the Adusting color in the plug-in dialog to open the color selector
+dialog and pick in the image the color you want turned to gray. Then set 
+optionnaly the Reference gray point if you don't want a pure gray but a 
+smoothly colored gray as Reference. Checking ërserve White and Black is better
+if you have pure white or black pixels in the image.
+
+
+Parameters :
+
+Directory = batch works only, working directory in which the batch is 
+running and the files to handle are
+
+File extension = batch works only, only the files with this extension will be 
+treated
+
+Destination directory = batch works only, the new created image will be saved in 
+this directory. Source and Destination directory can be the same, the original 
+image won't be overwrited. The name of the new image is suffixed with the word
+BORDER 
+
+Adjusting color = the color who will be turned into the reference gray. You can 
+clic in the color to open the color selector dialog. From this dialog it's
+possible to pick a color in the image. Also you can drag and drop any color 
+from the toolbox.
+
+Reference gray = the destination color of the adjusting color. 
+
+Preserve White and Black = if you choose No (channel mixer) then the channel
+mixer is used to adjust the gray point. In this case this is a linear change of
+colors, white and black pixels also get new colors. If you choose Yes (curves) 
+the curve tool is used to adjust the gray point. In this case this is a non
+linear change of colors, white and black pixels don't change.

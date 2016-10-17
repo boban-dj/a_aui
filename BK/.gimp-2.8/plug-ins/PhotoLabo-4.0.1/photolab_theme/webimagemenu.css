@@ -1,0 +1,165 @@
+body {
+  background: #999;
+  margin: 0;
+  padding: 0;
+	font-family: "Verdana", "Veranda", "Bitstream Vera", "Arial", "Helvetica" , sans-serif;
+	font-size: 0.8em;
+	color: #FFF;
+	text-align: center
+}
+
+a {
+	text-decoration:none;
+}
+
+a:link, a:visited {
+  color: #CCF;
+	text-decoration: none;
+}
+
+a:hover, a:active { 
+  color: #FFC;
+}
+
+img {
+	border: none 0px;  
+}
+
+#mainpage {
+  background: url(images/background.png) #555 repeat;
+  position: absolute;
+  width: 1000px;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: 0.5em;
+  padding: 0;
+  border: 1px solid #000;
+}
+
+#titlelarge {
+  padding: 1em;
+  height: auto;
+  min-height:60px;
+  margin: auto;
+  border-bottom: dashed 1px #000;
+}
+#titlelarge p {
+  font-size: 1.4em;
+  font-weight: bold;  
+  font-style: normal;
+}
+#titlelarge em.comment {
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Begin old title style */
+#title {
+  padding: 1em;
+  height: 60px;
+  margin-right: 180px;
+}
+#title p {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+#title em.comment {
+  font-size: 1.0em;
+  font-weight: normal;
+  font-style: normal;
+}
+/* End old title style */
+
+.navigstop, .navigbar2, .navigbar3 {
+	position: absolute;
+  left: 1000px;
+  margin: 5px;
+  padding: 0px;
+  width: 50px;
+  /* background: url(images/background-bar.png) #204049 repeat; */
+  border: dashed 1px #FFFFFF;
+}
+.navigstop p, .navigbar2 p, .navigbar3 p {
+  margin-top:0em;
+}
+.navigstop {
+	top: 0px;
+  height: 50px;
+}
+.navigbar2 {
+  height: 100px;
+}
+.navigbar3 {
+  height: 150px;
+}
+
+/* Begin old navigbar */
+.navigbar, .navigbar4 {
+	position: absolute;
+	top: 0px;
+  right: 0px;
+  margin: 5px;
+  padding: 0px;
+  width: 170px;
+  height: 60px;
+  background: url(images/background-bar.png) #204049 repeat;
+  border:    dashed 1px #FFFFFF;
+}
+.navigbar4 {
+  width: 230px;
+}
+.navigbar p, .navigbar4 p {
+  margin: 5px;
+  text-align: center;
+}  
+/* End old navigbar */
+
+
+#footer {
+  padding-bottom: 1em; 
+}
+
+.image-area {
+}
+
+.image-area img {
+  border-width: 2px;	
+  border-style: ridge;
+  border-color: #4AA;
+}
+
+p.image-comment {
+ 	font-size: 1.2em; 
+ 	font-weight: bold;
+}
+
+p.image-desc {
+  text-align: left;
+  margin-left: 2em;
+}
+
+p.border {
+  color : #FFC; 
+}
+
+.menu {
+  float: right;
+  width: 27%; 
+  margin-right: 0em;
+  height: 640px;
+  overflow: auto;
+  white-space: normal;
+}
+
+.menu ul {
+	list-style:none;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.menu img {
+  border-width: 2px;	
+  border-style: ridge;
+  border-color: #4AA;
+}
