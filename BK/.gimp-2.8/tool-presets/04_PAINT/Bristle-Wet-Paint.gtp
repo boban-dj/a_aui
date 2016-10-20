@@ -1,0 +1,28 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-smudge")
+(name "X - Bristle Wet")
+(tool-options "GimpSmudgeOptions"
+    (tool "gimp-smudge-tool")
+    (foreground (color-rgb 0.992157 0.042799 0.042799))
+    (background (color-rgb 0.000000 0.000000 0.000000))
+    (opacity 0.497000)
+    (brush "BristleWet025")
+    (dynamics "Bristles")
+    (palette "Default")
+    (brush-size 80.000000)
+    (hard yes)
+    (jitter-amount 0.339806)
+    (dynamics-expanded yes)
+    (smoothing-quality 30)
+    (smoothing-factor 25.800000)
+    (rate 100.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

@@ -1,0 +1,10 @@
+# GIMP gimp-eraser-tool options
+
+(foreground (color-rgb 1.000000 0.200000 0.800000))
+(brush "1. Pixel")
+(dynamics "Pressure Opacity")
+(palette "Visibone 2")
+(brush-size 1.000000)
+(hard yes)
+
+# end of gimp-eraser-tool options

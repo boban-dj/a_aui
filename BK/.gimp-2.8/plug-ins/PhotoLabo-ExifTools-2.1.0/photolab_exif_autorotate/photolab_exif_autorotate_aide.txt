@@ -1,0 +1,29 @@
+Aide pour le python-fu photolab_exif_autorotate.py
+Auteur Raymond Ostertag
+Licence GNU/FDL
+
+Objet : 
+Un traitement par lots pour redresser vos photographies en fonction du tag
+EXIF d'orientation. Ce dernier est mis à jour.
+
+Dépendances :
+Les installations suivantes seront nécessaires tant que Gimp ne permettra pas de gérer 
+les données EXIF depuis un script.
+Pour les données EXIF, il faut installer JHead : 
+http://www.sentex.net/~mwandel/jhead/ 
+Pour tourner les photos depuis JHead, il faut installer JPEGtran : 
+http://sylvana.net/jpegcrop/jpegtran/
+ou pour Mac OSX
+http://txfx.net/code/os-x/automatic-lossless-jpg-rotation/
+
+Menu :
+Filtres / Photolabo / Outils EXIF / Auto-rotation
+
+
+Variables :
+
+Répertoire = répertoire de travail où sont stockées les images à traiter.
+Il n'y pas de copies, les photos originales sont modifiées.
+
+Extension = seuls les fichiers portants cette extension seront
+traitées

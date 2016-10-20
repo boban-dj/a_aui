@@ -1,0 +1,26 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "Smoke 01")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (opacity 0.900000)
+    (brush "Structure 01")
+    (dynamics "Soft Spray Random Aspect")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 100.000000)
+    (use-jitter yes)
+    (jitter-amount 1.000000)
+    (dynamics-expanded yes)
+    (gradient-reverse yes)
+    (flow 30.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

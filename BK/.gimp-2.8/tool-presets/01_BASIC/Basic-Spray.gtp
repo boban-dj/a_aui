@@ -1,0 +1,28 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "Spray  (Small)")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (foreground (color-rgb 0.541176 0.200000 0.141176))
+    (brush "Medium Round")
+    (dynamics "Spray  (A)")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 8.000000)
+    (use-jitter yes)
+    (jitter-amount 40.000000)
+    (dynamics-expanded yes)
+    (fade-length 30.000000)
+    (fade-unit percent)
+    (rate 140.000000)
+    (flow 100.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

@@ -1,0 +1,63 @@
+#! /bin/sh                                                      
+
+n=1
+
+# Next line is entered all on one line
+RES=`zenity --title="Image Width" --entry --text="Image Resizer -- Please enter the image width (e.g. 600)"`
+
+  if [ $? == 1 ]; then
+     exit
+  fi
+
+# Next line is entered all on one line
+EXT=`zenity --title="File Extension" --entry --text="Enter the file extension you want to convert to (e.g. JPG, PNG, TIFF)"`
+
+  if [ $? == 1 ]; then
+     exit
+  fi
+declare -l EXT
+EXT=$EXT
+
+# Next line is entered all on one line
+QUAL=`zenity --title="Image Quality" --entry --text="Enter the 
+image quality (1 - 100)"`
+
+  if [ $? == 1 ]; then
+     exit
+  fi
+
+if [ $EXT == "png" ];
+  then
+     BACKGROUND="-background none"
+     QUALITY=$(($QUAL / 10))
+  else
+     BACKGROUND="-background white"
+     QUALITY="$QUAL"
+fi
+
+REZ=$((RES-2))
+
+NEW_DIR=./Resized$RES
+if [ ! -d $NEW_DIR ]; then
+  mkdir $NEW_DIR
+fi
+sleep 1
+
+for file in $@; do
+   if [ ! -e $file ]; then
+       continue
+   fi
+
+   name=$( echo $file | cut -f1 -d.)
+
+# Next line is entered all on one line
+   convert -resize $REZ -quality $QUALITY $BACKGROUND -bordercolor black -border 1x1 $file $NEW_DIR/${name}_$RES.$EXT
+
+   echo $(($n * 100 / $#))
+   echo "# Processing file: $file"
+   let "n = n+1"
+
+# Next line is entered all on one line
+done | (zenity  --progress --title "Resizing..." --percentage=0 --auto-close --auto-kill)
+
+exit 0

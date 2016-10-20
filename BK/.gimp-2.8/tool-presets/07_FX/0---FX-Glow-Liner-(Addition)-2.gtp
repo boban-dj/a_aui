@@ -1,0 +1,30 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-colorize")
+(name "0 - FX Smoothed Glow Liner (Addition)")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (foreground (color-rgb 0.278431 0.268540 0.201999))
+    (opacity 0.250000)
+    (paint-mode addition-mode)
+    (brush "Soft Square #1")
+    (dynamics "Glow")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 80.000000)
+    (application-mode incremental)
+    (jitter-amount 17.660000)
+    (dynamics-expanded yes)
+    (fade-unit percent)
+    (use-smoothing yes)
+    (smoothing-quality 100)
+    (smoothing-factor 1000.000000))
+(use-fg-bg yes)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient yes)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
