@@ -1,0 +1,26 @@
+Help for python-fu photolab_levelbatch.py
+Author Raymond Ostertag
+License GNU/FDL
+
+Object : 
+Apply a file saved from the Level tool of Gimp in batch mode. Works for 
+Gimp-2.6. Can no more read Gimp curve file in Gimp-2.4 format and before.
+
+Menu:
+Filters / Photolab / Batch corrections / Level
+
+
+Parameters :
+
+Directory = working directory in which the batch is running and the files to
+handle are. The new created files are saved in the same directory and
+prefixed with "LEVEL_", the old files are not deleted.
+
+Extension = only the files with this extension will be treated
+
+Gimp Level file = the file saved from the Level tool of Gimp, located by
+default in ".gimp-2.6/levels"
+
+
+Trouble :
+If the Gimp Level File don't exist nothing happen !

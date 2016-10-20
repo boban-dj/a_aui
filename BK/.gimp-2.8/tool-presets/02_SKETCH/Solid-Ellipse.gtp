@@ -1,0 +1,28 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-paintbrush")
+(name "4 - Solid Ellipse")
+(tool-options "GimpPaintOptions"
+    (tool "gimp-paintbrush-tool")
+    (foreground (color-rgb 0.862745 0.077816 0.077816))
+    (brush "Solid Ellipse 60")
+    (dynamics "Ink")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 120.000000)
+    (jitter-amount 17.660000)
+    (dynamics-expanded yes)
+    (fade-unit percent)
+    (gradient-reverse yes)
+    (use-smoothing yes)
+    (smoothing-quality 70)
+    (smoothing-factor 350.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

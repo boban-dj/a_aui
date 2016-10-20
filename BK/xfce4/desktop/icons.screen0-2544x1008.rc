@@ -1,0 +1,36 @@
+[arch_master]
+row=3
+col=9
+
+[Keyboard]
+row=7
+col=0
+
+[250 GB Volume]
+row=0
+col=0
+
+[Iomega_HDD]
+row=5
+col=0
+
+[backup_sdc]
+row=4
+col=0
+
+[3.0 TB Volume]
+row=6
+col=0
+
+[Trash]
+row=3
+col=0
+
+[File System]
+row=1
+col=0
+
+[Home]
+row=2
+col=0
+

@@ -1,0 +1,29 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-smudge")
+(name "Tex - Cloudy Soft")
+(tool-options "GimpSmudgeOptions"
+    (tool "gimp-smudge-tool")
+    (foreground (color-rgb 1.000000 0.047059 0.181592))
+    (opacity 0.900000)
+    (brush "Brush514")
+    (dynamics "Smudge Wet")
+    (palette "Default")
+    (brush-size 60.000000)
+    (use-jitter yes)
+    (jitter-amount 2.000000)
+    (dynamics-expanded yes)
+    (fade-length 30.000000)
+    (fade-unit percent)
+    (smoothing-quality 30)
+    (smoothing-factor 25.800000)
+    (rate 97.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

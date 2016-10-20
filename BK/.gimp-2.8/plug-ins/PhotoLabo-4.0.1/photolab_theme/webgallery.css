@@ -1,0 +1,99 @@
+body {
+  background: #999;
+  margin: 0;
+  padding: 0;
+	font-family: "Verdana", "Veranda", "Bitstream Vera", "Arial", "Helvetica" , sans-serif;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	text-align: center
+}
+
+a {
+	text-decoration:none;
+}
+
+a:link, a:visited {
+  color: #CCF;
+	text-decoration: none;
+}
+
+a:hover, a:active { 
+  color: #FFC;
+}
+
+img {
+	border: none 0px;  
+}
+
+#mainpage {
+  background: url(images/background.png) #555555 repeat;
+  position: absolute;
+  width: 900px;
+  left: 50%;
+  margin-left: -450px;
+  margin-top: 0.5em;
+  padding: 0;
+  border: 1px solid #000;
+}
+
+#title {
+  padding: 1em;
+}
+
+#title p {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.navigbar {
+  background: url(images/background-bar.png) #555555 repeat;
+  border-top:    dashed 1px #FFFFFF;
+  border-bottom: dashed 1px #FFFFFF;
+}
+
+.navigbar table {
+	width: 100%;
+	margin: 0;
+	padding: 0.2em;
+}
+
+.navigbar td {
+	padding:0;
+	width: 25%;
+}
+
+#footer {
+  padding-bottom: 1em; 
+}
+
+.photo {
+  border-width: 3px;	
+  border-style: ridge;
+  border-color: #AAAAAA;
+}
+
+.image-area {
+}
+
+.image-area table {
+  margin: 0.5em;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.image-area td {
+  padding: 1em;
+ 	text-align:center 
+}
+
+.image-area img {
+  border-width: 2px;	
+  border-style: ridge;
+  border-color: #AAA;
+}
+
+p.image-comment {
+ 	font-size: 1.2em; 
+}
+
+

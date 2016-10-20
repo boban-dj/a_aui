@@ -1,0 +1,22 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-bucket-fill")
+(name "00 - FILL  (White)")
+(tool-options "GimpBucketFillOptions"
+    (tool "gimp-bucket-fill-tool")
+    (pattern "Pine")
+    (brush-size 43.000000)
+    (gradient-reverse yes)
+    (fill-mode bg-bucket-fill)
+    (fill-selection yes)
+    (sample-merged yes)
+    (threshold 60.000000))
+(use-fg-bg yes)
+(use-brush no)
+(use-dynamics no)
+(use-gradient no)
+(use-pattern yes)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

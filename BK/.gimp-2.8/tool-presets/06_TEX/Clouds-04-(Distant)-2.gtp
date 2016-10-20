@@ -1,0 +1,25 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-airbrush")
+(name "Clouds 04 (Distant)")
+(tool-options "GimpAirbrushOptions"
+    (tool "gimp-airbrush-tool")
+    (brush "Cloudy")
+    (dynamics "Pencil")
+    (gradient "FG to BG (RGB)")
+    (palette "Default")
+    (brush-size 207.250000)
+    (use-jitter yes)
+    (jitter-amount 1.220000)
+    (dynamics-expanded yes)
+    (rate 22.100000)
+    (flow 13.100000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file
