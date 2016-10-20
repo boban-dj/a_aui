@@ -1,0 +1,47 @@
+Help file for python-fu photolab_exif_synchronize_2camera.py
+Author Raymond Ostertag
+License GNU/FDL
+
+Object: 
+A batch work applying at two sets of photos each taken from an other camera.
+The photos have been taken at the same time and your wish is to merge them
+in one single album. In order to have them in chronological order, a time offset
+between the 2 internal time of the cameras is needed.
+
+Dependencies :
+The following software must be installed until Gimp won't be able to manage
+EXIF datas from a script.
+For the EXIF tools, you must install JHead at:
+http://www.sentex.net/~mwandel/jhead/ 
+
+Menu:
+Filters / Photolab / EXIF tools / Synchronize 2 cameras
+
+
+Parameters:
+
+First camera source directory = directory where the files to handle from the first 
+camera are. The photos will be copied in the Merging destination directory.
+The copies will be prefixed by the shouting date.
+
+Extension = only the files with this extension will be treated. Apply to the files
+of the first source directory.
+
+Sign = add or substract time offset between the internal dates of the cameras ?
+
+Days / Hours / Minutes / Seconds = numbers of days, hours, minutes,
+seconds of the time offset
+
+Second camera source directory = directory where the files to handle from the second 
+camera are. The first and the second source directories can not be the same. The 
+photos will be copied in the Merging destination directory. The copies will be prefixed by 
+the shouting date.
+
+Extension = only the files with this extension will be treated. Apply to the files
+of the second source directory.
+
+Merging destination directory = directory where the images are copied. The destination 
+directory can be one of the source directory. In this case, the files of the source
+directory identical at the destination directory won't be copied and the original files
+will be modified.
+
